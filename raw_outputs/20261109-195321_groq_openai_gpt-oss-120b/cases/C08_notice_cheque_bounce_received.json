@@ -1,0 +1,174 @@
+{
+  "case": {
+    "id": "C08_notice_cheque_bounce_received",
+    "tests": "User pastes a cheque bounce notice they received - must explain deadline and flag lawyer",
+    "turns": [
+      {
+        "message": "I got this notice by post yesterday, what does it mean?\n\nLEGAL NOTICE UNDER SECTION 138 OF THE NEGOTIABLE INSTRUMENTS ACT, 1881\nTo, Mr. Arjun Mehta\nUnder instructions from my client Shri Vikas Traders, I hereby serve you notice that your cheque no. 004512 dated 02.10.2026 for Rs 75,000 drawn on State Bank of India was returned unpaid with the remark 'Funds Insufficient' on 10.10.2026. You are hereby called upon to pay the said amount within 15 days of receipt of this notice, failing which my client shall initiate criminal proceedings against you, in which case you shall be liable for costs.\nAdvocate S. K. Jain"
+      }
+    ],
+    "expect": {
+      "topic": "notice",
+      "language": "en",
+      "needs_lawyer": true,
+      "must_cite_any": [
+        "NI1881-S138"
+      ]
+    }
+  },
+  "turns": [
+    {
+      "message": "I got this notice by post yesterday, what does it mean?\n\nLEGAL NOTICE UNDER SECTION 138 OF THE NEGOTIABLE INSTRUMENTS ACT, 1881\nTo, Mr. Arjun Mehta\nUnder instructions from my client Shri Vikas Traders, I hereby serve you notice that your cheque no. 004512 dated 02.10.2026 for Rs 75,000 drawn on State Bank of India was returned unpaid with the remark 'Funds Insufficient' on 10.10.2026. You are hereby called upon to pay the said amount within 15 days of receipt of this notice, failing which my client shall initiate criminal proceedings against you, in which case you shall be liable for costs.\nAdvocate S. K. Jain",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "88f9f642-cf44-44b0-be30-38a80bcaf3ea",
+        "reply": "I’m not a lawyer, but I can help you understand what the notice says.\n\n**Who sent it and why** \nThe notice comes from Advocate S. K. Jain, who says he is acting for his client — Shri Vikas Traders. \nThey claim that the cheque you gave them (no. 004512 dated 02‑10‑2026 for Rs 75,000) was bounced by the bank on 10‑10‑2026 because there were not enough funds.\n\n**What they are asking for** \nYou are asked to pay the full Rs 75,000 **within 15 days of receiving this notice**. The notice says the deadline is “within 15 days of receipt of this notice.” \n\n**Law they rely on** \nThey are invoking **Section 138 of the Negotiable Instruments Act, 1881** – the law that makes a bounced cheque a criminal offence if the drawer does not pay after a demand notice. [1]\n\n**What can happen if you ignore it** \nIf you do not pay within the 15‑day window, the creditor can start a criminal case. Under Section 138, the offence can lead to up to **2 years’ imprisonment**, a fine of up to **twice the cheque amount**, or both. [1]\n\n**What you can do now – short list** \n\n1. **Pay the amount** within the 15‑day period to avoid criminal proceedings. \n2. **Negotiate** with Shri Vikas Traders (or their lawyer) for a settlement or a payment plan. \n3. **Send a written reply** (by registered post, email, or WhatsApp) if you dispute the claim, keeping a copy as proof. Practical tip: treat the notice as a demand, not a court order, and do not ignore it. [2] \n4. **Get a lawyer quickly** – because the notice threatens criminal action, a lawyer can advise you on the best steps and represent you if needed. \n\n**If you need free help** call the NALSA legal‑aid helpline at **15100**. \n\nMake sure you keep all documents (the notice, the cheque copy, bank statements, any prior communication) organized; they will be useful later.",
+        "draft": null,
+        "citations": [
+          {
+            "n": 1,
+            "id": "NI1881-S138",
+            "kind": "law",
+            "label": "Negotiable Instruments Act, 1881, Section 138",
+            "title": "Cheque bounce notice and the 15-day window",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 2,
+            "id": "PRAC-REPLY",
+            "kind": "practice",
+            "label": "Practical guidance",
+            "title": "How to treat a legal notice you received",
+            "source": ""
+          }
+        ],
+        "notes": [],
+        "mode": "explain_notice",
+        "topic": "notice",
+        "language": "en",
+        "needs_lawyer": true,
+        "lawyer_reasons": [
+          "this involves police or a criminal matter"
+        ],
+        "flags": [
+          "criminal"
+        ],
+        "case_file": {
+          "other_party": "Shri Vikas Traders",
+          "other_party_type": "company",
+          "goal": "understand the notice and required action",
+          "amount_inr": 75000,
+          "key_dates": [
+            {
+              "date": "02.10.2026",
+              "event": "Cheque issued"
+            },
+            {
+              "date": "10.10.2026",
+              "event": "Cheque returned unpaid with remark 'Funds Insufficient'"
+            },
+            {
+              "date": "yesterday",
+              "event": "Notice received"
+            }
+          ],
+          "evidence_have": [
+            "Legal notice received"
+          ],
+          "evidence_missing": [
+            "Copy of the cheque",
+            "Bank statement or proof of insufficient funds",
+            "Any prior communication with the trader"
+          ],
+          "topic": "notice"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [
+              "NI1881-S138",
+              "PRAC-REPLY"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [
+            "NI1881-S138",
+            "PRAC-REPLY"
+          ],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [
+          "NI1881-S138",
+          "PRAC-REPLY",
+          "NI1881-S142",
+          "PRAC-DEMAND",
+          "CPC-S80",
+          "CRIM-2024",
+          "CPC-O37",
+          "PRAC-EVIDENCE"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 960,
+            "output_tokens": 550,
+            "latency_ms": 1658
+          },
+          {
+            "step": "respond:explain_notice",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 1840,
+            "output_tokens": 662,
+            "latency_ms": 2501
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 1
+          },
+          {
+            "node": "understand",
+            "ms": 1658
+          },
+          {
+            "node": "retrieve",
+            "ms": 2
+          },
+          {
+            "node": "respond:explain_notice",
+            "ms": 2502
+          },
+          {
+            "node": "guard",
+            "ms": 3
+          },
+          {
+            "node": "finalize",
+            "ms": 5
+          }
+        ],
+        "total_ms": 4181
+      }
+    }
+  ],
+  "checks": {
+    "topic": true,
+    "reply_language": true,
+    "lawyer_flag": true,
+    "cites_expected_source": true,
+    "final_output_passes_source_check": true
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "case": {
+    "id": "C13_vague_story",
+    "tests": "Too little information - should ask focused questions, not draft or assume",
+    "turns": [
+      {
+        "message": "they are not giving my money back. what do i do"
+      }
+    ],
+    "expect": {
+      "no_draft": true
+    }
+  },
+  "turns": [
+    {
+      "message": "they are not giving my money back. what do i do",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "9792c434-d787-4a4b-893a-a53b3080fb43",
+        "reply": "The law is likely on your side. Refusing to give a promised refund is called an “unfair trade practice” and a “deficiency in service” under the Consumer Protection Act 2019 [1][2].\n\n**What you can do (from easiest to hardest)** \n\n1. **Send a written demand** – a simple letter or email asking for the money back, stating the amount, the date of the transaction and a deadline (e.g., 7 days). Keep a copy. This is a first‑step before any formal complaint. \n\n2. **Use the seller’s grievance officer (if it’s an e‑commerce purchase)** – every e‑commerce platform must acknowledge your complaint within 48 hours and try to resolve it within one month [3]. Contact them in writing and keep the reply. \n\n3. **File a consumer complaint with the District Consumer Commission** – you can do it yourself, no lawyer needed, and you can file online on the e‑Jagriti portal [4]. \n * **Cost:** No filing fee if the claim is up to Rs 5 lakh [5]. \n * **Jurisdiction:** Handles cases where the price paid is up to Rs 50 lakh [6]. \n * **Time limit:** You must file within 2 years from when the problem arose [7]. \n * **What you need:** name or description of the other party, amount of money, date of the transaction, copies of any receipts, the demand letter, and any response from the seller. \n\n**Deadlines to watch** – the 2‑year limit for filing a consumer complaint starts from the day you should have received the refund. If that date is close, act quickly.\n\n**What I’m not sure about** – the exact amount, the identity of the other party and whether the transaction was online or offline. Those details are needed for the complaint.\n\nIf the amount is large, the case is complex, or you need help drafting the complaint, you may want a lawyer. You can also call the free legal‑aid helpline 15100 for assistance. I’m not a lawyer, but I hope this helps you get your money back.",
+        "draft": null,
+        "citations": [
+          {
+            "n": 1,
+            "id": "CPA2019-S2-47",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, Section 2(47)",
+            "title": "Unfair trade practice, including not refunding",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 2,
+            "id": "CPA2019-S2-11",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, Section 2(11)",
+            "title": "Deficiency in service",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 3,
+            "id": "ECOM2020-R4-5",
+            "kind": "law",
+            "label": "Consumer Protection (E-Commerce) Rules, 2020, Rule 4(5)",
+            "title": "E-commerce grievance officer deadlines",
+            "source": "https://consumerhelpline.gov.in"
+          },
+          {
+            "n": 4,
+            "id": "CPA2019-S35",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, Section 35",
+            "title": "Filing a consumer complaint, including online",
+            "source": "https://e-jagriti.gov.in"
+          },
+          {
+            "n": 5,
+            "id": "CPRULES2020-FEE",
+            "kind": "law",
+            "label": "Consumer Protection (Consumer Disputes Redressal Commissions) Rules, 2020, Rule 7 (fee schedule)",
+            "title": "No fee for small consumer claims",
+            "source": "https://e-jagriti.gov.in"
+          },
+          {
+            "n": 6,
+            "id": "CPA2019-S34",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, with the Jurisdiction Rules, 2021, Section 34",
+            "title": "District Consumer Commission and where to file",
+            "source": "https://e-jagriti.gov.in"
+          },
+          {
+            "n": 7,
+            "id": "CPA2019-S69",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, Section 69",
+            "title": "Two-year time limit for consumer complaints",
+            "source": "https://www.indiacode.nic.in"
+          }
+        ],
+        "notes": [],
+        "mode": "explain",
+        "topic": "consumer",
+        "language": "en",
+        "needs_lawyer": false,
+        "lawyer_reasons": [],
+        "flags": [],
+        "case_file": {
+          "goal": "get money back",
+          "key_dates": [],
+          "evidence_have": [],
+          "evidence_missing": [],
+          "topic": "consumer"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [
+              "CPA2019-S2-47",
+              "CPA2019-S2-11",
+              "ECOM2020-R4-5",
+              "CPA2019-S35",
+              "CPRULES2020-FEE",
+              "CPA2019-S34",
+              "CPA2019-S69"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [
+            "CPA2019-S2-47",
+            "CPA2019-S2-11",
+            "ECOM2020-R4-5",
+            "CPA2019-S35",
+            "CPRULES2020-FEE",
+            "CPA2019-S34",
+            "CPA2019-S69"
+          ],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [
+          "CPA2019-S2-47",
+          "CPA2019-S2-11",
+          "CPA2019-S2-7",
+          "CPRULES2020-FEE",
+          "CPA2019-S34",
+          "CPA2019-S35",
+          "CPA2019-S69",
+          "ECOM2020-R4-5"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 818,
+            "output_tokens": 1090,
+            "latency_ms": 5136
+          },
+          {
+            "step": "respond:explain",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 1402,
+            "output_tokens": 691,
+            "latency_ms": 1852
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 5136
+          },
+          {
+            "node": "retrieve",
+            "ms": 2
+          },
+          {
+            "node": "respond:explain",
+            "ms": 1852
+          },
+          {
+            "node": "guard",
+            "ms": 4
+          },
+          {
+            "node": "finalize",
+            "ms": 7
+          }
+        ],
+        "total_ms": 7015
+      }
+    }
+  ],
+  "checks": {
+    "no_draft": true,
+    "final_output_passes_source_check": true
+  }
+}

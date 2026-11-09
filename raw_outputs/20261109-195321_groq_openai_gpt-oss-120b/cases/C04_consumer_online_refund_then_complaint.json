@@ -1,0 +1,459 @@
+{
+  "case": {
+    "id": "C04_consumer_online_refund_then_complaint",
+    "tests": "E-commerce refund pending 45 days, explain rights then draft consumer complaint",
+    "turns": [
+      {
+        "message": "I returned a pair of headphones (Rs 8,499) to an online store on 20 September 2026. Pickup was done, but the refund still hasn't come. Customer care keeps saying 'refund under process' and nobody replied to my email to their grievance officer two weeks ago. I'm in Jaipur."
+      },
+      {
+        "message": "Draft a complaint I can file in the consumer commission."
+      }
+    ],
+    "expect": {
+      "topic": "consumer",
+      "language": "en",
+      "draft_on_turn": 2,
+      "must_cite_any": [
+        "CPA2019-S2-47",
+        "ECOM2020-R4-5",
+        "CPA2019-S35",
+        "CPRULES2020-FEE",
+        "CPA2019-S69"
+      ]
+    }
+  },
+  "turns": [
+    {
+      "message": "I returned a pair of headphones (Rs 8,499) to an online store on 20 September 2026. Pickup was done, but the refund still hasn't come. Customer care keeps saying 'refund under process' and nobody replied to my email to their grievance officer two weeks ago. I'm in Jaipur.",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "f7184823-7c64-4f64-aaf8-dd0aa44fe1eb",
+        "reply": "**Short answer** \nYes, the law is on your side. Not refunding a returned product is a “deficiency” in service and an “unfair trade practice” under the Consumer Protection Act 2019 [1][2]. The e‑commerce platform also had to resolve your grievance within one month, but it has not done so [3].\n\n**What you can do – from easiest to hardest**\n\n1. **Send a final written demand** \n *What:* A polite but firm letter (email or registered post) asking for the Rs 8,499 refund within 7 days, citing the above provisions. \n *Cost:* Free (post fee only). \n *Need:* Order number, name of the store, proof of pickup (delivery receipt). \n\n2. **Escalate to the grievance officer again** \n *What:* Call or email the officer, remind them of the 48‑hour acknowledgment rule and the one‑month resolution deadline [3]. Mention you will file a consumer complaint if no refund is received. \n *Cost:* Free. \n *Need:* Same documents as above plus a copy of your earlier email. \n\n3. **File a consumer complaint** \n *What:* Lodge a complaint with the District Consumer Commission (Jaipur) – the value (Rs 8,499) is well within its jurisdiction [4]. Use the e‑Jagriti portal (the online filing system) [5]. \n *Cost:* No filing fee for claims up to Rs 5 lakh [6]. \n *Time limit:* You must file within 2 years from the date the problem arose (the refund date) [7]. \n *Need:* Order number, store name, copy of pickup confirmation, copies of all communications, and your demand letter. \n\n4. **Seek help from consumer helplines** \n *National Consumer Helpline:* 1915 or 1800‑11‑4000. \n *Free legal‑aid helpline (NALSA):* 15100. They can guide you on drafting the demand and filing the complaint. \n\n**Deadlines to watch** \n- The platform should have resolved the grievance within one month of your complaint (by early October). That deadline has passed, strengthening your case. \n- You have until **20 September 2028** to file a consumer complaint (2 years from the return date) [7].\n\n**What I’m not sure about** \n- The exact name of the online store and the order number – you’ll need these for the complaint. \n- Whether the platform gave you any written promise of a specific refund timeline; if not, the 30‑day rule in the Act applies [2].\n\n**When to see a lawyer** \nIf the platform still refuses after the consumer commission’s order, or if you feel the process is too complex, a lawyer can help enforce the order. You can get free assistance through the NALSA helpline (15100). \n\nGood luck, and keep all your documents together!",
+        "draft": null,
+        "citations": [
+          {
+            "n": 1,
+            "id": "CPA2019-S2-11",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, Section 2(11)",
+            "title": "Deficiency in service",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 2,
+            "id": "CPA2019-S2-47",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, Section 2(47)",
+            "title": "Unfair trade practice, including not refunding",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 3,
+            "id": "ECOM2020-R4-5",
+            "kind": "law",
+            "label": "Consumer Protection (E-Commerce) Rules, 2020, Rule 4(5)",
+            "title": "E-commerce grievance officer deadlines",
+            "source": "https://consumerhelpline.gov.in"
+          },
+          {
+            "n": 4,
+            "id": "CPA2019-S34",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, with the Jurisdiction Rules, 2021, Section 34",
+            "title": "District Consumer Commission and where to file",
+            "source": "https://e-jagriti.gov.in"
+          },
+          {
+            "n": 5,
+            "id": "CPA2019-S35",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, Section 35",
+            "title": "Filing a consumer complaint, including online",
+            "source": "https://e-jagriti.gov.in"
+          },
+          {
+            "n": 6,
+            "id": "CPRULES2020-FEE",
+            "kind": "law",
+            "label": "Consumer Protection (Consumer Disputes Redressal Commissions) Rules, 2020, Rule 7 (fee schedule)",
+            "title": "No fee for small consumer claims",
+            "source": "https://e-jagriti.gov.in"
+          },
+          {
+            "n": 7,
+            "id": "CPA2019-S69",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, Section 69",
+            "title": "Two-year time limit for consumer complaints",
+            "source": "https://www.indiacode.nic.in"
+          }
+        ],
+        "notes": [],
+        "mode": "explain",
+        "topic": "consumer",
+        "language": "en",
+        "needs_lawyer": false,
+        "lawyer_reasons": [],
+        "flags": [],
+        "case_file": {
+          "other_party": "online store",
+          "other_party_type": "online platform",
+          "location": "Jaipur",
+          "goal": "receive refund",
+          "amount_inr": 8499,
+          "key_dates": [
+            {
+              "date": "20 September 2026",
+              "event": "returned headphones and pickup completed"
+            },
+            {
+              "date": "~6 October 2026",
+              "event": "emailed grievance officer, no reply"
+            }
+          ],
+          "evidence_have": [
+            "pickup confirmation",
+            "email to grievance officer"
+          ],
+          "evidence_missing": [
+            "order number",
+            "refund receipt or bank statement",
+            "any other communication"
+          ],
+          "topic": "consumer"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [
+              "CPA2019-S2-11",
+              "CPA2019-S2-47",
+              "ECOM2020-R4-5",
+              "CPA2019-S34",
+              "CPA2019-S35",
+              "CPRULES2020-FEE",
+              "CPA2019-S69"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [
+            "CPA2019-S2-11",
+            "CPA2019-S2-47",
+            "ECOM2020-R4-5",
+            "CPA2019-S34",
+            "CPA2019-S35",
+            "CPRULES2020-FEE",
+            "CPA2019-S69"
+          ],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [
+          "ECOM2020-R4-5",
+          "CPA2019-S35",
+          "CPA2019-S2-11",
+          "CPA2019-S2-47",
+          "CPA2019-S2-7",
+          "CPRULES2020-FEE",
+          "CPA2019-S34",
+          "CPA2019-S69"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 869,
+            "output_tokens": 408,
+            "latency_ms": 2144
+          },
+          {
+            "step": "respond:explain",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 1544,
+            "output_tokens": 956,
+            "latency_ms": 2491
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 2144
+          },
+          {
+            "node": "retrieve",
+            "ms": 1
+          },
+          {
+            "node": "respond:explain",
+            "ms": 2491
+          },
+          {
+            "node": "guard",
+            "ms": 1
+          },
+          {
+            "node": "finalize",
+            "ms": 2
+          }
+        ],
+        "total_ms": 4647
+      }
+    },
+    {
+      "message": "Draft a complaint I can file in the consumer commission.",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "f7184823-7c64-4f64-aaf8-dd0aa44fe1eb",
+        "reply": "Below is a draft consumer complaint you can file on the e‑Jagriti portal or send by Speed Post (keep the receipt). Fill in every [FILL: …] with your own details before filing.\n\n\n(See the draft below.)\n\n\nHave a lawyer check this before sending if the amount is large or the other side has a lawyer.",
+        "draft": "Date: [FILL: Date]\n\nTo \nThe Hon’ble District Consumer Disputes Redressal Commission, \n[Address of the Commission, Jaipur]\n\nSubject: Complaint under the Consumer Protection Act, 2019 against [FILL: Online Store Name] for non‑refund of Rs 8,499\n\n1. The complainant is [FILL: Your Name], residing at [FILL: Your Address], Jaipur. He/She purchased a pair of headphones from the online store [FILL: Online Store Name] (order no. [FILL: Order Number]) for Rs 8,499 for personal use. \n\n2. The headphones were returned on 20 September 2026 and the pickup was completed, as shown in the attached pickup‑confirmation receipt. \n\n3. Despite the return, the seller has not refunded the amount. Customer‑care repeatedly states “refund under process”. An email was sent to the grievance officer on or about 6 October 2026 and no reply was received. \n\n4. The seller’s failure to refund constitutes a “deficiency in service” under Section 2(11) of the Consumer Protection Act, 2019 (Section 2(11), Consumer Protection Act, 2019) and an “unfair trade practice” under Section 2(47) (Section 2(47), Consumer Protection Act, 2019). \n\n5. The e‑commerce platform is required to acknowledge a grievance within 48 hours and resolve it within one month under the E‑Commerce Rules, 2020, Rule 4(5) (Rule 4(5), Consumer Protection (E-Commerce) Rules, 2020). This deadline has been missed. \n\n6. The complainant is a “consumer” as defined in Section 2(7) of the Act because the purchase was for personal use (Section 2(7), Consumer Protection Act, 2019). \n\n7. The value of the claim (Rs 8,499) is below Rs 5 lakh; therefore no filing fee is payable as per the Consumer Disputes Redressal Commissions Rules, 2020, Rule 7 (Rule 7 (fee schedule), Consumer Protection (Consumer Disputes Redressal Commissions) Rules, 2020). \n\n8. The complaint is filed within two years from the date the cause of action arose (20 September 2026) in compliance with Section 69 of the Act (Section 69, Consumer Protection Act, 2019). \n\n9. Jurisdiction lies with the District Consumer Commission of Jaipur because the claim amount is up to Rs 50 lakh and the cause arose in Jaipur (Section 34, Consumer Protection Act, 2019, with the Jurisdiction Rules, 2021). \n\n10. The complaint may be filed electronically on the e‑Jagriti portal as provided in Section 35 of the Act (Section 35, Consumer Protection Act, 2019).\n\nPrayer\n\nThe complainant respectfully prays that the Commission may:\n\na) Direct the opposite party to refund the amount of Rs 8,499 to the complainant within 15 days of the order; and \n\nb) Pass any further relief that the Commission deems just and proper.\n\nVerification\n\nI, [FILL: Your Name], the complainant, do hereby verify that the facts stated above are true to the best of my knowledge and belief.\n\nPlace: Jaipur \nDate: [FILL: Date]\n\nSignature: ___________________",
+        "citations": [
+          {
+            "n": 1,
+            "id": "CPA2019-S2-11",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, Section 2(11)",
+            "title": "Deficiency in service",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 2,
+            "id": "CPA2019-S2-47",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, Section 2(47)",
+            "title": "Unfair trade practice, including not refunding",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 3,
+            "id": "ECOM2020-R4-5",
+            "kind": "law",
+            "label": "Consumer Protection (E-Commerce) Rules, 2020, Rule 4(5)",
+            "title": "E-commerce grievance officer deadlines",
+            "source": "https://consumerhelpline.gov.in"
+          },
+          {
+            "n": 4,
+            "id": "CPA2019-S2-7",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, Section 2(7)",
+            "title": "Who is a consumer",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 5,
+            "id": "CPRULES2020-FEE",
+            "kind": "law",
+            "label": "Consumer Protection (Consumer Disputes Redressal Commissions) Rules, 2020, Rule 7 (fee schedule)",
+            "title": "No fee for small consumer claims",
+            "source": "https://e-jagriti.gov.in"
+          },
+          {
+            "n": 6,
+            "id": "CPA2019-S69",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, Section 69",
+            "title": "Two-year time limit for consumer complaints",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 7,
+            "id": "CPA2019-S34",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, with the Jurisdiction Rules, 2021, Section 34",
+            "title": "District Consumer Commission and where to file",
+            "source": "https://e-jagriti.gov.in"
+          },
+          {
+            "n": 8,
+            "id": "CPA2019-S35",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, Section 35",
+            "title": "Filing a consumer complaint, including online",
+            "source": "https://e-jagriti.gov.in"
+          }
+        ],
+        "notes": [],
+        "mode": "draft",
+        "topic": "consumer",
+        "language": "en",
+        "needs_lawyer": false,
+        "lawyer_reasons": [],
+        "flags": [],
+        "case_file": {
+          "other_party": "online store",
+          "other_party_type": "online platform",
+          "location": "Jaipur",
+          "goal": "receive refund",
+          "amount_inr": 8499,
+          "key_dates": [
+            {
+              "date": "20 September 2026",
+              "event": "returned headphones and pickup completed"
+            },
+            {
+              "date": "~6 October 2026",
+              "event": "emailed grievance officer, no reply"
+            }
+          ],
+          "evidence_have": [
+            "pickup confirmation",
+            "email to grievance officer"
+          ],
+          "evidence_missing": [
+            "order number",
+            "refund receipt or bank statement",
+            "any other communication"
+          ],
+          "topic": "consumer"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [
+              "CPA2019-S2-7",
+              "ECOM2020-R4-5",
+              "CPA2019-S2-11",
+              "CPA2019-S2-47",
+              "CPA2019-S34",
+              "CPA2019-S69",
+              "CPRULES2020-FEE"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [
+              "Rules 2020"
+            ],
+            "case_law": [],
+            "outdated": [],
+            "violations": 1
+          },
+          {
+            "attempt": 1,
+            "valid_tags": [
+              "CPA2019-S2-11",
+              "CPA2019-S2-47",
+              "ECOM2020-R4-5",
+              "CPA2019-S2-7",
+              "CPRULES2020-FEE",
+              "CPA2019-S69",
+              "CPA2019-S34",
+              "CPA2019-S35"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [
+            "CPA2019-S2-11",
+            "CPA2019-S2-47",
+            "ECOM2020-R4-5",
+            "CPA2019-S2-7",
+            "CPRULES2020-FEE",
+            "CPA2019-S69",
+            "CPA2019-S34",
+            "CPA2019-S35"
+          ],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [
+          "CPA2019-S35",
+          "CPA2019-S2-11",
+          "CPA2019-S34",
+          "CPA2019-S69",
+          "CPRULES2020-FEE",
+          "CPA2019-S2-47",
+          "CPA2019-S2-7",
+          "ECOM2020-R4-5"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 1641,
+            "output_tokens": 654,
+            "latency_ms": 1990
+          },
+          {
+            "step": "respond:draft",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 2341,
+            "output_tokens": 1854,
+            "latency_ms": 5698
+          },
+          {
+            "step": "respond:draft",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 2392,
+            "output_tokens": 2037,
+            "latency_ms": 6074
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 1990
+          },
+          {
+            "node": "retrieve",
+            "ms": 3
+          },
+          {
+            "node": "respond:draft",
+            "ms": 5699
+          },
+          {
+            "node": "guard",
+            "ms": 4
+          },
+          {
+            "node": "respond:draft",
+            "ms": 6074
+          },
+          {
+            "node": "guard",
+            "ms": 3
+          },
+          {
+            "node": "finalize",
+            "ms": 7
+          }
+        ],
+        "total_ms": 13796
+      }
+    }
+  ],
+  "checks": {
+    "topic": true,
+    "reply_language": true,
+    "draft_produced": true,
+    "cites_expected_source": true,
+    "final_output_passes_source_check": true
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "case": {
+    "id": "C15_large_amount_builder",
+    "tests": "Very large consumer claim - should route to the right commission tier and flag a lawyer",
+    "turns": [
+      {
+        "message": "I paid a builder Rs 85 lakh for a flat in Gurugram in 2023. Possession was promised by June 2025 and still nothing. I want a full refund with interest."
+      }
+    ],
+    "expect": {
+      "topic": "consumer",
+      "language": "en",
+      "needs_lawyer": true
+    }
+  },
+  "turns": [
+    {
+      "message": "I paid a builder Rs 85 lakh for a flat in Gurugram in 2023. Possession was promised by June 2025 and still nothing. I want a full refund with interest.",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "787e2088-b183-454c-bab5-8a80e333598d",
+        "reply": "**Short answer** \nYes, the law is likely on your side. The builder’s failure to give possession is a *deficiency in service* and also an *unfair trade practice* because they promised a refund and have not paid it [1][2]. \n\n**What you can do – from easiest to hardest**\n\n1. **Send a written demand for refund (with interest).** \n *What it is*: a formal letter asking the builder to return Rs 85 lakh plus interest. \n *Cost*: free (post‑age or courier fee). \n *What you need*: proof of payment (bank statement, receipt), copy of any agreement or promise, and the demand letter. \n *Tip*: keep a copy and send it by registered post so you have proof of delivery.\n\n2. **Use consumer‑helpline or grievance officer (if the builder has one).** \n *What it is*: call the National Consumer Helpline (1915 or 1800‑11‑4000) or ask the builder’s grievance officer to acknowledge your complaint within 48 hours and try to settle within a month [3]. \n *Cost*: free. \n *What you need*: same documents as above plus the complaint reference you receive.\n\n3. **File a complaint with the State Consumer Commission.** \n *What it is*: a quasi‑judicial body that can order the builder to refund the money and pay compensation. \n *Jurisdiction*: because the claim is above Rs 50 lakh, it goes to the State Commission, not the District one [4]. \n *Filing fee*: there is a fee for claims above Rs 5 lakh; the exact amount is set in the fee schedule [5]. \n *How to file*: you can file online on the e‑Jagriti portal (e‑jagriti.gov.in) without a lawyer [6]. \n *Time limit*: you must file within 2 years from when the problem arose (the missed possession date, June 2025) – so before June 2027 [7]. \n\n**What you still need to gather** \n- Builder’s full name and registration details. \n- Exact date(s) of payment and the amount paid. \n- Any written agreement or contract, or at least a copy of the payment receipt. \n\n**When to see a lawyer** \nBecause the amount is large (Rs 85 lakh) and the process can be complex, a lawyer can help draft the demand letter, prepare the complaint, and represent you at the Commission. You can get free legal aid through NALSA’s helpline 15100 if you cannot afford a lawyer. \n\n**What I’m not sure about** \nI don’t have the builder’s name, the exact payment date, or a copy of any written agreement. Those details are crucial for the complaint. \n\nGood luck, and keep all your documents safe.",
+        "draft": null,
+        "citations": [
+          {
+            "n": 1,
+            "id": "CPA2019-S2-11",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, Section 2(11)",
+            "title": "Deficiency in service",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 2,
+            "id": "CPA2019-S2-47",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, Section 2(47)",
+            "title": "Unfair trade practice, including not refunding",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 3,
+            "id": "ECOM2020-R4-5",
+            "kind": "law",
+            "label": "Consumer Protection (E-Commerce) Rules, 2020, Rule 4(5)",
+            "title": "E-commerce grievance officer deadlines",
+            "source": "https://consumerhelpline.gov.in"
+          },
+          {
+            "n": 4,
+            "id": "CPA2019-S34",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, with the Jurisdiction Rules, 2021, Section 34",
+            "title": "District Consumer Commission and where to file",
+            "source": "https://e-jagriti.gov.in"
+          },
+          {
+            "n": 5,
+            "id": "CPRULES2020-FEE",
+            "kind": "law",
+            "label": "Consumer Protection (Consumer Disputes Redressal Commissions) Rules, 2020, Rule 7 (fee schedule)",
+            "title": "No fee for small consumer claims",
+            "source": "https://e-jagriti.gov.in"
+          },
+          {
+            "n": 6,
+            "id": "CPA2019-S35",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, Section 35",
+            "title": "Filing a consumer complaint, including online",
+            "source": "https://e-jagriti.gov.in"
+          },
+          {
+            "n": 7,
+            "id": "CPA2019-S69",
+            "kind": "law",
+            "label": "Consumer Protection Act, 2019, Section 69",
+            "title": "Two-year time limit for consumer complaints",
+            "source": "https://www.indiacode.nic.in"
+          }
+        ],
+        "notes": [],
+        "mode": "explain",
+        "topic": "consumer",
+        "language": "en",
+        "needs_lawyer": true,
+        "lawyer_reasons": [
+          "High amount (Rs 85 lakh) and potential legal action needed"
+        ],
+        "flags": [],
+        "case_file": {
+          "other_party": "builder",
+          "other_party_type": "company",
+          "location": "Gurugram",
+          "goal": "Full refund with interest",
+          "amount_inr": 8500000,
+          "key_dates": [
+            {
+              "date": "June 2025",
+              "event": "Possession promised by builder"
+            }
+          ],
+          "evidence_have": [],
+          "evidence_missing": [
+            "written agreement/contract",
+            "payment receipt or proof",
+            "builder’s written promise"
+          ],
+          "topic": "consumer"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [
+              "CPA2019-S2-11",
+              "CPA2019-S2-47",
+              "ECOM2020-R4-5",
+              "CPA2019-S34",
+              "CPRULES2020-FEE",
+              "CPA2019-S35",
+              "CPA2019-S69"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [
+            "CPA2019-S2-11",
+            "CPA2019-S2-47",
+            "ECOM2020-R4-5",
+            "CPA2019-S34",
+            "CPRULES2020-FEE",
+            "CPA2019-S35",
+            "CPA2019-S69"
+          ],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [
+          "CPA2019-S2-11",
+          "CPRULES2020-FEE",
+          "CPA2019-S35",
+          "CPA2019-S34",
+          "CPA2019-S2-47",
+          "CPA2019-S69",
+          "CPA2019-S2-7",
+          "ECOM2020-R4-5"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 847,
+            "output_tokens": 455,
+            "latency_ms": 1006
+          },
+          {
+            "step": "respond:explain",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 1506,
+            "output_tokens": 972,
+            "latency_ms": 2681
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 1007
+          },
+          {
+            "node": "retrieve",
+            "ms": 1
+          },
+          {
+            "node": "respond:explain",
+            "ms": 2681
+          },
+          {
+            "node": "guard",
+            "ms": 4
+          },
+          {
+            "node": "finalize",
+            "ms": 6
+          }
+        ],
+        "total_ms": 3710
+      }
+    }
+  ],
+  "checks": {
+    "topic": true,
+    "reply_language": true,
+    "lawyer_flag": true,
+    "final_output_passes_source_check": true
+  }
+}

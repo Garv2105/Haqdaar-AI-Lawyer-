@@ -1,0 +1,152 @@
+{
+  "case": {
+    "id": "C07_salary_hindi_daily_wage_draft",
+    "tests": "Hindi, daily-wage worker, draft a complaint to the labour authority",
+    "turns": [
+      {
+        "message": "मैं एक फैक्ट्री में दिहाड़ी पर काम करता था, 600 रुपये रोज़। ठेकेदार ने पिछले 20 दिन का पैसा नहीं दिया। मैं गाज़ियाबाद में हूँ। मुझे शिकायत लिखनी है।",
+        "mode": "draft"
+      }
+    ],
+    "expect": {
+      "topic": "salary",
+      "language": "hi",
+      "draft_on_turn": 1
+    }
+  },
+  "turns": [
+    {
+      "message": "मैं एक फैक्ट्री में दिहाड़ी पर काम करता था, 600 रुपये रोज़। ठेकेदार ने पिछले 20 दिन का पैसा नहीं दिया। मैं गाज़ियाबाद में हूँ। मुझे शिकायत लिखनी है।",
+      "mode_sent": "draft",
+      "response": {
+        "conversation_id": "2db935e0-cad8-47cf-8005-e8e5c3616e65",
+        "reply": "यहाँ एक लिखित माँग‑पत्र (डिमांड लेटर) का नमूना है। \nआपको अपने ठेकेदार का पूरा नाम, पता और अपने काम की सटीक तिथियाँ भरनी होंगी। \nइसे स्पीड पोस्ट (ट्रैकिंग के साथ) या ई‑मेल से भेजें और भेजने की रसीद सुरक्षित रखें। \n\n\n(See the draft below.)\n \n\nकृपया इस पत्र को भेजने से पहले किसी वकील से जाँच कर लें, खासकर अगर राशि बड़ी हो या दूसरी पार्टी के पास वकील हो।",
+        "draft": "Date: [FILL: पत्र की तिथि]\n\nFrom: \nName: [FILL: आपका पूरा नाम] \nAddress: [FILL: आपका पूरा पता] \nPhone: [FILL: आपका फ़ोन नंबर] \n\nTo: \nName: [FILL: ठेकेदार का पूरा नाम] \nAddress: [FILL: ठेकेदार का पूरा पता] \n\nSubject: Demand for Payment of Unpaid Daily Wages \n\n1. I was employed as a daily‑wage worker at your factory located in Ghaziabad. \n2. My daily wage rate is Rs 600 (six hundred rupees) as agreed. \n3. For the period of the last 20 working days, i.e., from [FILL: प्रारम्भ तिथि] to [FILL: समाप्ति तिथि], you have not paid me the wages due, amounting to Rs 12,000 (twelve thousand rupees). \n\nLegal Basis: \n- Under the Code on Wages, 2019, Section 17, wages must be paid before the end of the 7th day of the following month. Failure to do so is a violation (Section 17, Code on Wages, 2019). \n- A claim for unpaid wages can be filed before the labour authority within three years of the cause of action, and the authority should decide within three months (Section 45, Code on Wages, 2019). \n\nDemand: \nPlease pay the outstanding amount of Rs 12,000 within fifteen (15) days from the date of this letter, i.e., by [FILL: डेडलाइन तिथि]. \n\nConsequences of Non‑Payment: \nIf the amount is not received within the stipulated period, I will file a wage claim before the appropriate labour authority as provided under the Code on Wages, 2019, Section 45. \n\nYours sincerely, \n\n[Signature] \n[FILL: आपका पूरा नाम]",
+        "citations": [
+          {
+            "n": 1,
+            "id": "COW2019-S17",
+            "kind": "law",
+            "label": "Code on Wages, 2019, Section 17",
+            "title": "Deadline for paying wages",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 2,
+            "id": "COW2019-S45",
+            "kind": "law",
+            "label": "Code on Wages, 2019, Section 45",
+            "title": "Wage claim before the labour authority",
+            "source": "https://www.indiacode.nic.in"
+          }
+        ],
+        "notes": [],
+        "mode": "draft",
+        "topic": "salary",
+        "language": "hi",
+        "needs_lawyer": false,
+        "lawyer_reasons": [],
+        "flags": [],
+        "case_file": {
+          "other_party": "ठेकेदार",
+          "other_party_type": "employer",
+          "location": "गाज़ियाबाद",
+          "goal": "शिकायत लिखनी है",
+          "key_dates": [],
+          "evidence_have": [],
+          "evidence_missing": [
+            "payment receipts",
+            "contract or agreement",
+            "communication records"
+          ],
+          "topic": "salary"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [
+              "COW2019-S17",
+              "COW2019-S45"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [
+            "COW2019-S17",
+            "COW2019-S45"
+          ],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [
+          "COW2019-S45",
+          "COW2019-S69",
+          "COW2019-S17",
+          "COW2019-S18",
+          "PRAC-DEMAND",
+          "ICA1872-S73",
+          "LIM1963-A113",
+          "CPC-O37"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 854,
+            "output_tokens": 553,
+            "latency_ms": 3198
+          },
+          {
+            "step": "respond:draft",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 1798,
+            "output_tokens": 791,
+            "latency_ms": 2660
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 3198
+          },
+          {
+            "node": "retrieve",
+            "ms": 2
+          },
+          {
+            "node": "respond:draft",
+            "ms": 2660
+          },
+          {
+            "node": "guard",
+            "ms": 2
+          },
+          {
+            "node": "finalize",
+            "ms": 5
+          }
+        ],
+        "total_ms": 5877
+      }
+    }
+  ],
+  "checks": {
+    "topic": true,
+    "reply_language": true,
+    "draft_produced": true,
+    "final_output_passes_source_check": true
+  }
+}

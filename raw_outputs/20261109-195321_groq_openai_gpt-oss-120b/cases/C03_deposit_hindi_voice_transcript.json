@@ -1,0 +1,167 @@
+{
+  "case": {
+    "id": "C03_deposit_hindi_voice_transcript",
+    "tests": "Hindi in Devanagari, unpunctuated like a voice transcript, story is messy",
+    "turns": [
+      {
+        "message": "नमस्ते मेरा नाम सुनीता है हम लखनऊ में किराये पर रहते थे मार्च में मकान खाली किया मकान मालिक ने बीस हज़ार रुपये जमा लिए थे अब बोल रहे हैं कि पंखा टूट गया इसलिए पैसे नहीं देंगे पर पंखा तो पहले से खराब था मेरे पास कोई लिखित एग्रीमेंट नहीं है बस पैसे ऑनलाइन भेजे थे"
+      }
+    ],
+    "expect": {
+      "topic": "deposit",
+      "language": "hi"
+    }
+  },
+  "turns": [
+    {
+      "message": "नमस्ते मेरा नाम सुनीता है हम लखनऊ में किराये पर रहते थे मार्च में मकान खाली किया मकान मालिक ने बीस हज़ार रुपये जमा लिए थे अब बोल रहे हैं कि पंखा टूट गया इसलिए पैसे नहीं देंगे पर पंखा तो पहले से खराब था मेरे पास कोई लिखित एग्रीमेंट नहीं है बस पैसे ऑनलाइन भेजे थे",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "23db532f-4aeb-433a-bf37-f99cad2f81ef",
+        "reply": "**संक्षिप्त उत्तर** \nकिराए के डिपॉज़िट को वैकंट पोज़ेशन लेते‑ही वापस करना है, सिवाय उस राशि के जो किरायेदार से वास्तविक नुकसान हो (जैसे फैन का टूटना)। डिपॉज़िट को रोक ने के लिए मकान मालिक को नुकसान का प्रमाण देना है। आपके केस में फैन पहले से खराब था और कोई लिखित एग्रीमेंट नहीं है, इसलिए डिपॉज़िट वापस करना उचित है। [1]\n\n---\n\n### विकल्प (आसान से कठिन तक)\n\n1. **लिखित माँग‑पत्र भेजें** \n - क्या: मकान मालिक को डिपॉज़िट वापसी का आधिकारिक नोटिस। \n - कैसे: ई‑मेल/संदेश में रसीद का स्क्रीनशॉट और फैन की स्थिति का संक्षिप्त विवरण लगाएँ। \n - लागत: शून्य (आप खुद भेज सकते हैं)। \n - समय: भेजते ही 30 दिन में जवाब देने को कहें। \n\n2. **लोक अदालत (लोक अदलत) में निपटारा** \n - क्या: दोनों पक्षों की सहमति से डिपॉज़िट वापसी का समझौता। \n - लागत: कम (आमतौर पर शुल्क न्यूनतम या मुक्त)। \n - समय: आमतौर पर कुछ हफ्तों में सुनवाई। \n - क्या चाहिए: आपका ऑनलाइन ट्रांजैक्शन रसीद और डिपॉज़िट की राशि का प्रमाण। \n\n3. **सिविल सूट (सामान्य कोर्ट) या सारांश सूट** \n - क्या: अगर मकान मालिक रिफ़्यूज़ करता है, तो कोर्ट से डिपॉज़िट वापसी का आदेश मांगें। \n - लागत: वकील की फीस और कोर्ट शुल्क हो सकते हैं। \n - समय: कई महीने से एक साल तक। \n - क्या चाहिए: लिखित रेंट एग्रीमेंट (यदि कोई ई‑मेल या SMS से समझौता है, उसे प्रिंट करें), ऑनलाइन रसीद, और फैन की खराबी का कोई साक्ष्य (फ़ोटो या संदेश)। \n\n4. **कानूनी सहायता और वकील** \n - यदि आपको कानूनी प्रक्रिया जटिल लग रही है या मकान मालिक दबाव बढ़ा रहा है, तो वकील से सलाह ले । \n - आय सीमा पूरा करते हैं तो नि:शुल्क वकील के लिए 15100 पर कॉल करें (नालसा)। [2] \n\n---\n\n### समय‑सीमा \nडिपॉज़िट वापसी का हक उठाने का समय तीन साल के अंदर है। यदि आप मार्च 2024 में खाली किया तो अधिकतम मार्च 2027 तक दावा कर सकते हैं। [3]\n\n---\n\n### अनिश्चित बातें \n- उत्तर प्रदेश में क्या Model Tenancy Act को अपनाया गया है (यह राज्य‑विशिष्ट है)। इसलिए स्थानीय कानून की जाँच करें। \n- फैन की खराबी का कोई लिखित प्रमाण नहीं है तो मकान मालिक के दावे को संदेह से देखा जाएगा। \n\n**सुझाव**: पहले लिखित माँग‑पत्र भेजें, फिर लोक अदलत या कोर्ट की सोचें। यदि कोई जटिलता आती है तो फ्री लीगल एड के लिए 15100 पर कॉल करें। \n\n*मैं वकील नहीं हूँ, इसलिए अंतिम सलाह के लिए वकील से मिलें।*",
+        "draft": null,
+        "citations": [
+          {
+            "n": 1,
+            "id": "MTA2021-S11",
+            "kind": "law",
+            "label": "Model Tenancy Act, 2021, Section 11",
+            "title": "Cap on security deposit and its refund",
+            "source": "https://prsindia.org/billtrack/the-model-tenancy-act-2021"
+          },
+          {
+            "n": 2,
+            "id": "LSA1987-S12",
+            "kind": "law",
+            "label": "Legal Services Authorities Act, 1987, Section 12",
+            "title": "Who gets a free government lawyer",
+            "source": "https://nalsa.gov.in"
+          },
+          {
+            "n": 3,
+            "id": "LIM1963-A113",
+            "kind": "law",
+            "label": "Limitation Act, 1963, Schedule, Article 113",
+            "title": "Time limit for money recovery suits",
+            "source": "https://www.indiacode.nic.in"
+          }
+        ],
+        "notes": [],
+        "mode": "explain",
+        "topic": "deposit",
+        "language": "hi",
+        "needs_lawyer": false,
+        "lawyer_reasons": [],
+        "flags": [],
+        "case_file": {
+          "other_party": "मकान मालिक",
+          "other_party_type": "landlord",
+          "location": "Lucknow",
+          "goal": "पैसे वापस पाना",
+          "amount_inr": 20000,
+          "key_dates": [
+            {
+              "date": "March",
+              "event": "vacated house"
+            }
+          ],
+          "evidence_have": [
+            "ऑनलाइन ट्रांजैक्शन रसीद"
+          ],
+          "evidence_missing": [
+            "राइट ऑफ़ रेंटल एग्रीमेंट",
+            "रसीद of deposit",
+            "फैन की स्थिति का प्रमाण"
+          ],
+          "topic": "deposit"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [
+              "MTA2021-S11",
+              "LSA1987-S12",
+              "LIM1963-A113"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [
+            "MTA2021-S11",
+            "LSA1987-S12",
+            "LIM1963-A113"
+          ],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [
+          "MTA2021-S11",
+          "ICA1872-S73",
+          "CPC-O37",
+          "LIM1963-A113",
+          "CPC-S80",
+          "LSA1987-S12",
+          "LSA1987-S21",
+          "CRIM-2024"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 883,
+            "output_tokens": 1229,
+            "latency_ms": 2295
+          },
+          {
+            "step": "respond:explain",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 1705,
+            "output_tokens": 1528,
+            "latency_ms": 3794
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 1
+          },
+          {
+            "node": "understand",
+            "ms": 2295
+          },
+          {
+            "node": "retrieve",
+            "ms": 3
+          },
+          {
+            "node": "respond:explain",
+            "ms": 3795
+          },
+          {
+            "node": "guard",
+            "ms": 3
+          },
+          {
+            "node": "finalize",
+            "ms": 6
+          }
+        ],
+        "total_ms": 6116
+      }
+    }
+  ],
+  "checks": {
+    "topic": true,
+    "reply_language": true,
+    "final_output_passes_source_check": true
+  }
+}

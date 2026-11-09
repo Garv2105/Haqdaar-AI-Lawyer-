@@ -1,0 +1,542 @@
+{
+  "case": {
+    "id": "C01_deposit_english_full_flow",
+    "tests": "Full flow in English - build case, explain options, then draft a legal notice",
+    "turns": [
+      {
+        "message": "I moved out of my 1BHK in Koramangala, Bengaluru on 31 August 2026. I paid Rs 60,000 as security deposit when I moved in (rent was Rs 30,000). The landlord Mr. Ramesh Gowda is now saying he will keep Rs 35,000 for painting and 'general wear and tear'. He hasn't shown any bills. I have the rent agreement and the UPI receipt for the deposit."
+      },
+      {
+        "message": "What are my options? Is he allowed to do this?"
+      },
+      {
+        "message": "Ok, please draft a legal notice I can send him."
+      }
+    ],
+    "expect": {
+      "topic": "deposit",
+      "language": "en",
+      "draft_on_turn": 3,
+      "must_cite_any": [
+        "ICA1872-S73",
+        "MTA2021-S11",
+        "PRAC-DEMAND",
+        "LIM1963-A113"
+      ]
+    }
+  },
+  "turns": [
+    {
+      "message": "I moved out of my 1BHK in Koramangala, Bengaluru on 31 August 2026. I paid Rs 60,000 as security deposit when I moved in (rent was Rs 30,000). The landlord Mr. Ramesh Gowda is now saying he will keep Rs 35,000 for painting and 'general wear and tear'. He hasn't shown any bills. I have the rent agreement and the UPI receipt for the deposit.",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "35600312-9566-47fd-b2bd-dc502ea369f9",
+        "reply": "**Short answer** \nThe law says a landlord can keep only the amount that is actually owed for damage, and must show proof of the cost. Since he has not given any bills or notice, the deposit should be returned to you. [1]\n\n---\n\n### What you can do (easy → harder)\n\n1. **Send a written demand** – Email or WhatsApp a dated note saying: you moved out on 31 Aug 2026, you paid Rs 60,000, the landlord is withholding Rs 35,000 without proof, and you want the full amount back within 15 days. Keep the sent‑message screenshot. This often settles the matter. [2]\n\n2. **Collect and organise evidence** – Keep the rent agreement, UPI receipt, any chat messages, photos of the flat at move‑out, and a timeline of events. This will help any later step. [3]\n\n3. **Call free legal‑aid helpline** – Dial 15100 (NALSA) or visit your District Legal Services Authority. If your income is low you may get a free lawyer. [4]\n\n4. **File a summary suit for the deposit** – Because you have a written rent agreement, you can approach a civil court under CPC Order XXXVII for a quick money suit. You’ll need the agreement, payment proof, and the demand letter. A lawyer will draft the petition. [5]\n\n5. **Try a Lok Adalat** – If both you and the landlord agree, the case can be taken to a Lok Adalat, whose settlement is final and binding. No appeal is allowed. [6]\n\n---\n\n### Time limit \nA suit to recover money must be filed within 3 years from the day the right to sue arose. Here that date is roughly 31 Aug 2026, so you have time, but don’t wait too long. [7]\n\n---\n\n### What’s still unclear \n\n* **Whether Karnataka has adopted the Model Tenancy Act** – the rule above applies only in states that have enacted it. You may need to confirm this. \n* **Any clause in your agreement about wear‑and‑tear deductions** – check the contract for such a clause. \n\nIf you are unsure about the state law or need help drafting the demand or suit, a lawyer (or free legal aid) can guide you. \n\nGood luck, and keep all your documents handy!",
+        "draft": null,
+        "citations": [
+          {
+            "n": 1,
+            "id": "MTA2021-S11",
+            "kind": "law",
+            "label": "Model Tenancy Act, 2021, Section 11",
+            "title": "Cap on security deposit and its refund",
+            "source": "https://prsindia.org/billtrack/the-model-tenancy-act-2021"
+          },
+          {
+            "n": 2,
+            "id": "PRAC-DEMAND",
+            "kind": "practice",
+            "label": "Practical guidance",
+            "title": "Send a written demand before going to a forum",
+            "source": ""
+          },
+          {
+            "n": 3,
+            "id": "PRAC-EVIDENCE",
+            "kind": "practice",
+            "label": "Practical guidance",
+            "title": "What proof to collect",
+            "source": ""
+          },
+          {
+            "n": 4,
+            "id": "LSA1987-S12",
+            "kind": "law",
+            "label": "Legal Services Authorities Act, 1987, Section 12",
+            "title": "Who gets a free government lawyer",
+            "source": "https://nalsa.gov.in"
+          },
+          {
+            "n": 5,
+            "id": "CPC-O37",
+            "kind": "law",
+            "label": "Code of Civil Procedure, 1908, Order XXXVII",
+            "title": "Summary suit for a fixed sum under a written contract",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 6,
+            "id": "LSA1987-S21",
+            "kind": "law",
+            "label": "Legal Services Authorities Act, 1987, Section 21",
+            "title": "Lok Adalat settlement is final",
+            "source": "https://nalsa.gov.in"
+          },
+          {
+            "n": 7,
+            "id": "LIM1963-A113",
+            "kind": "law",
+            "label": "Limitation Act, 1963, Schedule, Article 113",
+            "title": "Time limit for money recovery suits",
+            "source": "https://www.indiacode.nic.in"
+          }
+        ],
+        "notes": [],
+        "mode": "explain",
+        "topic": "deposit",
+        "language": "en",
+        "needs_lawyer": false,
+        "lawyer_reasons": [],
+        "flags": [],
+        "case_file": {
+          "other_party": "Mr. Ramesh Gowda",
+          "other_party_type": "landlord",
+          "location": "Koramangala, Bengaluru",
+          "goal": "recover the deducted amount or dispute the deduction",
+          "amount_inr": 35000,
+          "key_dates": [
+            {
+              "date": "31 August 2026",
+              "event": "Moved out of 1BHK"
+            }
+          ],
+          "evidence_have": [
+            "rent agreement",
+            "UPI receipt for Rs 60,000 deposit"
+          ],
+          "evidence_missing": [
+            "bills or receipts for painting or wear and tear costs",
+            "any written notice from landlord about deductions"
+          ],
+          "topic": "deposit"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [
+              "MTA2021-S11",
+              "PRAC-DEMAND",
+              "PRAC-EVIDENCE",
+              "LSA1987-S12",
+              "CPC-O37",
+              "LSA1987-S21",
+              "LIM1963-A113"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [
+            "MTA2021-S11",
+            "PRAC-DEMAND",
+            "PRAC-EVIDENCE",
+            "LSA1987-S12",
+            "CPC-O37",
+            "LSA1987-S21",
+            "LIM1963-A113"
+          ],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [
+          "MTA2021-S11",
+          "PRAC-EVIDENCE",
+          "ICA1872-S73",
+          "LIM1963-A113",
+          "LSA1987-S12",
+          "PRAC-DEMAND",
+          "CPC-O37",
+          "LSA1987-S21"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 901,
+            "output_tokens": 541,
+            "latency_ms": 2426
+          },
+          {
+            "step": "respond:explain",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 1714,
+            "output_tokens": 794,
+            "latency_ms": 2494
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 2426
+          },
+          {
+            "node": "retrieve",
+            "ms": 14
+          },
+          {
+            "node": "respond:explain",
+            "ms": 2495
+          },
+          {
+            "node": "guard",
+            "ms": 1
+          },
+          {
+            "node": "finalize",
+            "ms": 2
+          }
+        ],
+        "total_ms": 4963
+      }
+    },
+    {
+      "message": "What are my options? Is he allowed to do this?",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "35600312-9566-47fd-b2bd-dc502ea369f9",
+        "reply": "**Short answer** \nA landlord may keep only the amount that is really owed for damage and must show proof of the cost. Because he has given no bills or written notice, the law is on your side and the whole Rs 60,000 should be returned. [1]\n\n---\n\n### Steps you can take (from easiest to hardest)\n\n1. **Send a written demand** – Email or WhatsApp a dated note to Mr. Gowda stating: you vacated on 31 Aug 2026, you paid Rs 60,000 as security, he is withholding Rs 35,000 without any bill, and you expect the full amount back within 15 days. Save the sent‑message screenshot as proof. This often settles the dispute. [2]\n\n2. **Gather all evidence** – Keep the rent agreement, UPI receipt, any chat or email exchanges, photos/video of the flat at move‑out, and the demand‑letter copy. A clear timeline helps any later filing. [3]\n\n3. **Call free legal‑aid helpline** – Dial **15100** (NALSA) or visit the District Legal Services Authority. If your income is below the prescribed limit you may get a free lawyer. [4]\n\n4. **File a summary suit for a fixed sum** – Because you have a written agreement, you can approach a civil court under CPC Order XXXVII for a quick money suit. You’ll need the agreement, payment proof, and the demand letter. A lawyer will prepare the petition; the court can order the landlord to pay the amount owed. [5]\n\n5. **Seek settlement in a Lok Adalat** – If both parties agree, the case can be taken to a Lok Adalat. Its award is final and binding, with no right of appeal. [6]\n\n---\n\n### Time limit \nA money‑recovery suit must be filed within **3 years** from the date the right to sue arose (here, roughly 31 Aug 2026). So you still have time, but act promptly. [7]\n\n---\n\n### What’s still uncertain \n\n* **Whether Karnataka has adopted the Model Tenancy Act** – the cap and refund rule apply only in states that have enacted the model law. You need to confirm this for Bengaluru. \n* **Whether your rent agreement contains a clause allowing deductions for wear‑and‑tear** – check the contract; if it does not, the landlord cannot rely on it.\n\nIf you are unsure about any of the above, or need help drafting the demand or filing the suit, consult a lawyer (free legal aid may be available). Good luck, and keep all documents safe!",
+        "draft": null,
+        "citations": [
+          {
+            "n": 1,
+            "id": "MTA2021-S11",
+            "kind": "law",
+            "label": "Model Tenancy Act, 2021, Section 11",
+            "title": "Cap on security deposit and its refund",
+            "source": "https://prsindia.org/billtrack/the-model-tenancy-act-2021"
+          },
+          {
+            "n": 2,
+            "id": "PRAC-DEMAND",
+            "kind": "practice",
+            "label": "Practical guidance",
+            "title": "Send a written demand before going to a forum",
+            "source": ""
+          },
+          {
+            "n": 3,
+            "id": "PRAC-EVIDENCE",
+            "kind": "practice",
+            "label": "Practical guidance",
+            "title": "What proof to collect",
+            "source": ""
+          },
+          {
+            "n": 4,
+            "id": "LSA1987-S12",
+            "kind": "law",
+            "label": "Legal Services Authorities Act, 1987, Section 12",
+            "title": "Who gets a free government lawyer",
+            "source": "https://nalsa.gov.in"
+          },
+          {
+            "n": 5,
+            "id": "CPC-O37",
+            "kind": "law",
+            "label": "Code of Civil Procedure, 1908, Order XXXVII",
+            "title": "Summary suit for a fixed sum under a written contract",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 6,
+            "id": "LSA1987-S21",
+            "kind": "law",
+            "label": "Legal Services Authorities Act, 1987, Section 21",
+            "title": "Lok Adalat settlement is final",
+            "source": "https://nalsa.gov.in"
+          },
+          {
+            "n": 7,
+            "id": "LIM1963-A113",
+            "kind": "law",
+            "label": "Limitation Act, 1963, Schedule, Article 113",
+            "title": "Time limit for money recovery suits",
+            "source": "https://www.indiacode.nic.in"
+          }
+        ],
+        "notes": [],
+        "mode": "explain",
+        "topic": "deposit",
+        "language": "en",
+        "needs_lawyer": false,
+        "lawyer_reasons": [],
+        "flags": [],
+        "case_file": {
+          "other_party": "Mr. Ramesh Gowda",
+          "other_party_type": "landlord",
+          "location": "Koramangala, Bengaluru",
+          "goal": "recover the deducted amount or dispute the deduction",
+          "amount_inr": 35000,
+          "key_dates": [
+            {
+              "date": "31 August 2026",
+              "event": "Moved out of 1BHK"
+            }
+          ],
+          "evidence_have": [
+            "rent agreement",
+            "UPI receipt for Rs 60,000 deposit"
+          ],
+          "evidence_missing": [
+            "bills or receipts for painting or wear and tear costs",
+            "any written notice from landlord about deductions"
+          ],
+          "topic": "deposit"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [
+              "MTA2021-S11",
+              "PRAC-DEMAND",
+              "PRAC-EVIDENCE",
+              "LSA1987-S12",
+              "CPC-O37",
+              "LSA1987-S21",
+              "LIM1963-A113"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [
+            "MTA2021-S11",
+            "PRAC-DEMAND",
+            "PRAC-EVIDENCE",
+            "LSA1987-S12",
+            "CPC-O37",
+            "LSA1987-S21",
+            "LIM1963-A113"
+          ],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [
+          "MTA2021-S11",
+          "ICA1872-S73",
+          "CPC-O37",
+          "PRAC-DEMAND",
+          "PRAC-EVIDENCE",
+          "LSA1987-S12",
+          "LSA1987-S21",
+          "LIM1963-A113"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 1556,
+            "output_tokens": 765,
+            "latency_ms": 1930
+          },
+          {
+            "step": "respond:explain",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 2232,
+            "output_tokens": 677,
+            "latency_ms": 1944
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 1931
+          },
+          {
+            "node": "retrieve",
+            "ms": 2
+          },
+          {
+            "node": "respond:explain",
+            "ms": 1944
+          },
+          {
+            "node": "guard",
+            "ms": 3
+          },
+          {
+            "node": "finalize",
+            "ms": 7
+          }
+        ],
+        "total_ms": 3904
+      }
+    },
+    {
+      "message": "Ok, please draft a legal notice I can send him.",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "35600312-9566-47fd-b2bd-dc502ea369f9",
+        "reply": "Below is a draft legal notice you can send to Mr. Ramesh Gowda. Fill in your address, his address and the date. Send it by Speed Post with tracking or as a registered email and keep the receipt as proof. \n\n\n(See the draft below.)\n\n\nHave a lawyer check this before sending if the amount is large or the other side has a lawyer.",
+        "draft": "Date: [FILL: Date]\n\nFrom: \n[FILL: Your Full Name] \n[FILL: Your Address] \nEmail: [FILL: Your Email] \nPhone: [FILL: Your Phone]\n\nTo: \nMr. Ramesh Gowda \n[FILL: Landlord’s Address]\n\nSubject: Legal notice for refund of security deposit\n\nDear Mr. Gowda,\n\nFacts\n\n1. On [FILL: Commencement Date] I entered into a written rent agreement with you for the premises situated at [FILL: Rental Property Address], Bengaluru, for a monthly rent of Rs 30,000 and a security deposit of Rs 60,000. (Rent agreement in my possession.) \n2. I vacated the premises and handed over vacant possession on 31 August 2026. \n3. I paid the security deposit of Rs 60,000 by UPI on [FILL: Payment Date]; the receipt is attached. \n4. You have informed me that you will retain Rs 35,000 for painting and “general wear and tear”, but you have not produced any bills, invoices or a written notice specifying the amount owed.\n\nLegal basis\n\n- Under the Model Tenancy Act, 2021, Section 11, a security deposit cannot exceed two months’ rent and must be refunded when the landlord takes back vacant possession, after deducting only the amount that the tenant actually owes. (Section 11, Model Tenancy Act, 2021) \n- A deduction is permissible only if the landlord can substantiate the cost of repair or replacement with proper bills or receipts. \n- If the dispute is not resolved amicably, I may file a summary suit for a fixed sum under Order XXXVII of the Code of Civil Procedure, 1908, which provides a speedy remedy for recovery of money due under a written contract. (Order XXXVII, Code of Civil Procedure, 1908)\n\nDemand\n\nI hereby demand that you refund the full security deposit of Rs 60,000 (or the amount lawfully deductible) within 15 days from the receipt of this notice.\n\nConsequences of non‑compliance\n\nIf the demanded amount is not paid within the stipulated period, I will be compelled to initiate legal proceedings against you, including filing a summary suit for recovery of the deposit and any consequential losses, and may also approach the Lok Adalat for a settlement. \n\nThis notice is issued without prejudice to any of my rights or remedies available under law.\n\nYours sincerely,\n\n_________________________ \n[FILL: Your Signature] \n[FILL: Your Name] \n\nEnclosures: \n1. Copy of Rent Agreement \n2. UPI receipt for Rs 60,000 deposit \n3. Copy of this notice (for your records)",
+        "citations": [
+          {
+            "n": 1,
+            "id": "MTA2021-S11",
+            "kind": "law",
+            "label": "Model Tenancy Act, 2021, Section 11",
+            "title": "Cap on security deposit and its refund",
+            "source": "https://prsindia.org/billtrack/the-model-tenancy-act-2021"
+          },
+          {
+            "n": 2,
+            "id": "CPC-O37",
+            "kind": "law",
+            "label": "Code of Civil Procedure, 1908, Order XXXVII",
+            "title": "Summary suit for a fixed sum under a written contract",
+            "source": "https://www.indiacode.nic.in"
+          }
+        ],
+        "notes": [],
+        "mode": "draft",
+        "topic": "deposit",
+        "language": "en",
+        "needs_lawyer": false,
+        "lawyer_reasons": [],
+        "flags": [],
+        "case_file": {
+          "other_party": "Mr. Ramesh Gowda",
+          "other_party_type": "landlord",
+          "location": "Koramangala, Bengaluru",
+          "goal": "recover deducted amount",
+          "amount_inr": 60000,
+          "key_dates": [
+            {
+              "date": "31 August 2026",
+              "event": "Moved out of 1BHK"
+            }
+          ],
+          "evidence_have": [
+            "rent agreement",
+            "UPI receipt for Rs 60,000 deposit"
+          ],
+          "evidence_missing": [
+            "bills or receipts for painting or wear and tear costs",
+            "any written notice from landlord about deductions"
+          ],
+          "topic": "deposit"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [
+              "MTA2021-S11",
+              "CPC-O37"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [
+            "MTA2021-S11",
+            "CPC-O37"
+          ],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [
+          "MTA2021-S11",
+          "PRAC-DEMAND",
+          "CPC-S80",
+          "CPC-O37",
+          "ICA1872-S73",
+          "LSA1987-S12",
+          "LSA1987-S21",
+          "LIM1963-A113"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 2129,
+            "output_tokens": 409,
+            "latency_ms": 1798
+          },
+          {
+            "step": "respond:draft",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 2957,
+            "output_tokens": 1380,
+            "latency_ms": 3308
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 1798
+          },
+          {
+            "node": "retrieve",
+            "ms": 2
+          },
+          {
+            "node": "respond:draft",
+            "ms": 3308
+          },
+          {
+            "node": "guard",
+            "ms": 3
+          },
+          {
+            "node": "finalize",
+            "ms": 9
+          }
+        ],
+        "total_ms": 5134
+      }
+    }
+  ],
+  "checks": {
+    "topic": true,
+    "reply_language": true,
+    "draft_produced": true,
+    "cites_expected_source": true,
+    "final_output_passes_source_check": true
+  }
+}

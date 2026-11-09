@@ -1,0 +1,240 @@
+{
+  "case": {
+    "id": "C14_outdated_law_trap",
+    "tests": "User names a repealed Act - bot should point to the Code on Wages",
+    "turns": [
+      {
+        "message": "My employer in Mumbai hasn't paid my salary since August 2026. Can I file a case under the Payment of Wages Act, 1936?"
+      }
+    ],
+    "expect": {
+      "topic": "salary",
+      "language": "en",
+      "must_cite_any": [
+        "COW2019-S69",
+        "COW2019-S45",
+        "COW2019-S17"
+      ]
+    }
+  },
+  "turns": [
+    {
+      "message": "My employer in Mumbai hasn't paid my salary since August 2026. Can I file a case under the Payment of Wages Act, 1936?",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "1acd669a-e6ea-404a-95e6-e933f3f1fde4",
+        "reply": "**Short answer** \nYes, the law is likely on your side. The Code on Wages (which replaced the Payment of Wages Act on 21 Nov 2025) still protects wages that were due after that date, and it requires monthly wages to be paid before the 7th day of the next month [1][2].\n\n**What you can do – from easiest to hardest**\n\n1. **Send a written demand** – Email or WhatsApp a dated message that states: you have not been paid since August 2026, the amount you claim, and you give a 15‑day deadline to pay. Keep the sent‑message screenshot as proof. This often makes the employer pay and also creates evidence if you later go to a forum [3].\n\n2. **File a wage claim with the labour authority** – Go to the district labour office (or the online portal if your state has one) and lodge a claim for unpaid wages. The authority must decide within about 3 months and you have up to 3 years from the date the wages became due to file [4]. You will need any proof you can gather (pay slips, bank statements, emails, the demand you sent, etc.) [5].\n\n3. **Start a summary suit in civil court** – If you have a written employment contract and the amount is a fixed sum, you can ask a lawyer to file a summary suit under CPC Order XXXVII. The court will let the employer defend only with permission. This route is faster than a regular suit but needs a written contract and a lawyer [6].\n\n**Key deadlines** \n- Wage claim must be filed within 3 years of the unpaid salary becoming due [4]. \n- The employer should have paid by the 7th day of the next month [2].\n\n**What I’m not sure about** \n- Whether the unpaid salary falls under the old Payment of Wages Act or the new Code on Wages (a lawyer can confirm). \n- The exact amount you are owed, any written notice you may have already sent, and any earlier attempts you made to recover the money.\n\n**When to see a lawyer** \nBecause you need to confirm which law applies and may need help preparing the labour‑authority claim or a summary suit, it’s wise to talk to a lawyer. You can also call the free legal‑aid helpline 15100 for advice. \n\nGood luck, and keep all your communications and documents dated and saved.",
+        "draft": null,
+        "citations": [
+          {
+            "n": 1,
+            "id": "COW2019-S69",
+            "kind": "law",
+            "label": "Code on Wages, 2019, Section 69",
+            "title": "Old wage laws repealed from 21 November 2025",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 2,
+            "id": "COW2019-S17",
+            "kind": "law",
+            "label": "Code on Wages, 2019, Section 17",
+            "title": "Deadline for paying wages",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 3,
+            "id": "PRAC-DEMAND",
+            "kind": "practice",
+            "label": "Practical guidance",
+            "title": "Send a written demand before going to a forum",
+            "source": ""
+          },
+          {
+            "n": 4,
+            "id": "COW2019-S45",
+            "kind": "law",
+            "label": "Code on Wages, 2019, Section 45",
+            "title": "Wage claim before the labour authority",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 5,
+            "id": "PRAC-EVIDENCE",
+            "kind": "practice",
+            "label": "Practical guidance",
+            "title": "What proof to collect",
+            "source": ""
+          },
+          {
+            "n": 6,
+            "id": "CPC-O37",
+            "kind": "law",
+            "label": "Code of Civil Procedure, 1908, Order XXXVII",
+            "title": "Summary suit for a fixed sum under a written contract",
+            "source": "https://www.indiacode.nic.in"
+          }
+        ],
+        "notes": [
+          "From 21 November 2025, the Code on Wages replaced the Payment of Wages Act 1936, the Minimum Wages Act 1948, the Payment of Bonus Act 1965 and the Equal Remuneration Act 1976. Rights and proceedings that arose under the old Acts are saved."
+        ],
+        "mode": "explain",
+        "topic": "salary",
+        "language": "en",
+        "needs_lawyer": false,
+        "lawyer_reasons": [],
+        "flags": [],
+        "case_file": {
+          "other_party": "employer",
+          "other_party_type": "employer",
+          "location": "Mumbai, India",
+          "goal": "file a case under Payment of Wages Act, 1936",
+          "key_dates": [
+            {
+              "date": "August 2026",
+              "event": "salary not paid since"
+            }
+          ],
+          "evidence_have": [],
+          "evidence_missing": [
+            "salary slips or payment records",
+            "employment contract",
+            "any written notice or communication from employer"
+          ],
+          "topic": "salary"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [
+              "COW2019-S69",
+              "COW2019-S17",
+              "PRAC-DEMAND",
+              "COW2019-S45",
+              "CPC-O37"
+            ],
+            "invalid_tags": [
+              "NALSA-HELPLINE"
+            ],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [
+              "COW2019-S69"
+            ],
+            "violations": 1
+          },
+          {
+            "attempt": 1,
+            "valid_tags": [
+              "COW2019-S69",
+              "COW2019-S17",
+              "PRAC-DEMAND",
+              "COW2019-S45",
+              "PRAC-EVIDENCE",
+              "CPC-O37"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [
+              "COW2019-S69"
+            ],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [
+            "COW2019-S69",
+            "COW2019-S17",
+            "PRAC-DEMAND",
+            "COW2019-S45",
+            "PRAC-EVIDENCE",
+            "CPC-O37"
+          ],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [
+            "COW2019-S69"
+          ],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [
+          "COW2019-S69",
+          "COW2019-S17",
+          "COW2019-S45",
+          "COW2019-S18",
+          "CPC-O37",
+          "PRAC-EVIDENCE",
+          "PRAC-DEMAND",
+          "CPC-S80"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 837,
+            "output_tokens": 378,
+            "latency_ms": 851
+          },
+          {
+            "step": "respond:explain",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 1596,
+            "output_tokens": 892,
+            "latency_ms": 2260
+          },
+          {
+            "step": "respond:explain",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 1644,
+            "output_tokens": 939,
+            "latency_ms": 2467
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 851
+          },
+          {
+            "node": "retrieve",
+            "ms": 3
+          },
+          {
+            "node": "respond:explain",
+            "ms": 2260
+          },
+          {
+            "node": "guard",
+            "ms": 4
+          },
+          {
+            "node": "respond:explain",
+            "ms": 2467
+          },
+          {
+            "node": "guard",
+            "ms": 3
+          },
+          {
+            "node": "finalize",
+            "ms": 6
+          }
+        ],
+        "total_ms": 5613
+      }
+    }
+  ],
+  "checks": {
+    "topic": true,
+    "reply_language": true,
+    "cites_expected_source": true,
+    "final_output_passes_source_check": true
+  }
+}

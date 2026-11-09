@@ -1,0 +1,110 @@
+{
+  "case": {
+    "id": "C10_out_of_scope_divorce",
+    "tests": "Family law matter must be declined with a referral, no legal citations",
+    "turns": [
+      {
+        "message": "meri shaadi ko 3 saal hue hain, husband ke saath nahi rehna, divorce kaise milega aur bachche ki custody?"
+      }
+    ],
+    "expect": {
+      "topic": "out_of_scope",
+      "needs_lawyer": true,
+      "no_citations": true
+    }
+  },
+  "turns": [
+    {
+      "message": "meri shaadi ko 3 saal hue hain, husband ke saath nahi rehna, divorce kaise milega aur bachche ki custody?",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "a62cd431-da12-49fa-ae67-abb40a987ca7",
+        "reply": "नमस्ते! मैं सुरक्षा जमा, उपभोक्ता रिफंड, बकाया वेतन और कानूनी नोटिस समझने में मदद कर सकता/सकती हूँ। तलाक और बाल अभिरक्षा के लिए एक वकील से सलाह लेना बेहतर रहेगा; आप NALSA फ्री लीगल एड हेल्पलाइन 15100 पर भी संपर्क कर सकते हैं। कृपया अपनी कहानी लिखें या आवाज़ में बताएं, मैं सुन रहा/रही हूँ।",
+        "draft": null,
+        "citations": [],
+        "notes": [],
+        "mode": "chitchat",
+        "topic": "out_of_scope",
+        "language": "hi",
+        "needs_lawyer": true,
+        "lawyer_reasons": [
+          "this is a family law matter"
+        ],
+        "flags": [
+          "family"
+        ],
+        "case_file": {
+          "key_dates": [],
+          "evidence_have": [],
+          "evidence_missing": []
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 836,
+            "output_tokens": 546,
+            "latency_ms": 2372
+          },
+          {
+            "step": "respond:chitchat",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 594,
+            "output_tokens": 251,
+            "latency_ms": 994
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 2372
+          },
+          {
+            "node": "respond:chitchat",
+            "ms": 994
+          },
+          {
+            "node": "guard",
+            "ms": 0
+          },
+          {
+            "node": "finalize",
+            "ms": 1
+          }
+        ],
+        "total_ms": 3377
+      }
+    }
+  ],
+  "checks": {
+    "topic": false,
+    "lawyer_flag": true,
+    "no_citations": true,
+    "final_output_passes_source_check": true
+  }
+}

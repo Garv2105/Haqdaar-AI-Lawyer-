@@ -1,0 +1,746 @@
+{
+  "case": {
+    "id": "C06_salary_explain_then_practise",
+    "tests": "Unpaid final settlement, explain, then role-play the HR manager for two turns and stop",
+    "turns": [
+      {
+        "message": "I resigned from a startup in Noida. My last working day was 15 October 2026. They haven't paid my salary for September and October (Rs 45,000 per month) and say 'funds are stuck, wait 2-3 months'. I have my offer letter, payslips till August, and the HR emails."
+      },
+      {
+        "message": "Can you pretend to be the HR manager so I can practise asking for my money?",
+        "mode": "practise"
+      },
+      {
+        "message": "Hi, I want my September and October salary. It has been almost a month since my last day."
+      },
+      {
+        "message": "The law says you have to pay within 2 working days of resignation. I will go to the labour authority if I don't get it in 7 days."
+      },
+      {
+        "message": "stop"
+      }
+    ],
+    "expect": {
+      "topic": "salary",
+      "language": "en",
+      "must_cite_any": [
+        "COW2019-S17",
+        "COW2019-S45"
+      ]
+    }
+  },
+  "turns": [
+    {
+      "message": "I resigned from a startup in Noida. My last working day was 15 October 2026. They haven't paid my salary for September and October (Rs 45,000 per month) and say 'funds are stuck, wait 2-3 months'. I have my offer letter, payslips till August, and the HR emails.",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "d57c4e46-f954-4d61-ba38-1ba776832776",
+        "reply": "**Short answer** \nYes, the law is on your side. Under the Code on Wages, monthly wages must be paid before the 7th day of the next month, and if you resign the dues must be cleared within 2 working days [1]. The startup has already missed those deadlines for September and October.\n\n**What you can do – from easiest to hardest**\n\n1. **Send a written demand** – Email or WhatsApp a dated note (or a Speed‑Post legal notice) stating: you left on 15 Oct 2026, salary of Rs 45,000 × 2 is owed, and you need payment within 15 days. Keep the sent copy as proof. This often settles the matter [2]. \n *Cost*: free (post‑age). \n *Time*: a few days to draft and send.\n\n2. **File a wage claim with the labour authority** – Approach the district labour office (Uttar Pradesh labour department). You, a registered union, or an inspector can file. The claim must be lodged within 3 years of the right to sue, and the authority should decide within 3 months [3]. \n *Cost*: usually nominal filing fee; you can ask the office. \n *Time*: a few weeks to prepare, then up to 3 months for a decision. \n *What you need*: offer letter, payslips up to Aug 2026, HR emails, any salary slips or bank statements for Sep‑Oct (if you can get them), and the written demand you sent.\n\n3. **Approach the free legal‑aid helpline** – Call 15100 or visit NALSA’s portal for advice and possibly a lawyer’s help at no charge. They can guide you on the exact forms and state‑specific steps [4] (the Code on Wages applies nationwide after 21 Nov 2025). \n\n4. **Civil suit for recovery of money** – If the labour route fails, you can sue the company in a civil court. The suit must be filed within 3 years from when the right to sue arose (the missed‑payment date) [5]. This is more costly and time‑consuming, so use it as a last resort.\n\n**Deadlines to watch** \n- Salary for September was due by 7 Nov 2026; October salary by 7 Nov 2026. \n- You have up to 3 years from those dates to file a claim [5].\n\n**What’s missing** \n- Exact due dates (usually the 7th of the next month). \n- Any written notice from the startup about the delay. \n\n**When to see a lawyer** \nIf you need a formal legal notice, or the labour authority’s decision is unsatisfactory, a lawyer can help draft the notice and represent you. You can get free assistance through 15100.\n\nI’m not a lawyer, so for any step that feels tricky, please confirm with a qualified lawyer or the legal‑aid helpline.",
+        "draft": null,
+        "citations": [
+          {
+            "n": 1,
+            "id": "COW2019-S17",
+            "kind": "law",
+            "label": "Code on Wages, 2019, Section 17",
+            "title": "Deadline for paying wages",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 2,
+            "id": "PRAC-DEMAND",
+            "kind": "practice",
+            "label": "Practical guidance",
+            "title": "Send a written demand before going to a forum",
+            "source": ""
+          },
+          {
+            "n": 3,
+            "id": "COW2019-S45",
+            "kind": "law",
+            "label": "Code on Wages, 2019, Section 45",
+            "title": "Wage claim before the labour authority",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 4,
+            "id": "COW2019-S69",
+            "kind": "law",
+            "label": "Code on Wages, 2019, Section 69",
+            "title": "Old wage laws repealed from 21 November 2025",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 5,
+            "id": "LIM1963-A113",
+            "kind": "law",
+            "label": "Limitation Act, 1963, Schedule, Article 113",
+            "title": "Time limit for money recovery suits",
+            "source": "https://www.indiacode.nic.in"
+          }
+        ],
+        "notes": [],
+        "mode": "explain",
+        "topic": "salary",
+        "language": "en",
+        "needs_lawyer": false,
+        "lawyer_reasons": [],
+        "flags": [],
+        "case_file": {
+          "other_party": "startup",
+          "other_party_type": "company",
+          "location": "Noida",
+          "goal": "receive unpaid salary for September and October",
+          "amount_inr": 90000,
+          "key_dates": [
+            {
+              "date": "15 October 2026",
+              "event": "last working day"
+            },
+            {
+              "date": "September 2026",
+              "event": "salary not paid"
+            },
+            {
+              "date": "October 2026",
+              "event": "salary not paid"
+            }
+          ],
+          "evidence_have": [
+            "offer letter",
+            "payslips till August 2026",
+            "HR emails"
+          ],
+          "evidence_missing": [
+            "salary slips for September and October",
+            "bank statements showing salary deposits",
+            "any written notice from employer about delay"
+          ],
+          "topic": "salary"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [
+              "COW2019-S17",
+              "PRAC-DEMAND",
+              "COW2019-S45",
+              "COW2019-S69",
+              "LIM1963-A113"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [
+            "COW2019-S17",
+            "PRAC-DEMAND",
+            "COW2019-S45",
+            "COW2019-S69",
+            "LIM1963-A113"
+          ],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [
+          "COW2019-S17",
+          "COW2019-S45",
+          "COW2019-S18",
+          "COW2019-S69",
+          "PRAC-EVIDENCE",
+          "CPC-S80",
+          "PRAC-DEMAND",
+          "LIM1963-A113"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 877,
+            "output_tokens": 589,
+            "latency_ms": 2242
+          },
+          {
+            "step": "respond:explain",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 1718,
+            "output_tokens": 1067,
+            "latency_ms": 2874
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 2242
+          },
+          {
+            "node": "retrieve",
+            "ms": 3
+          },
+          {
+            "node": "respond:explain",
+            "ms": 2875
+          },
+          {
+            "node": "guard",
+            "ms": 3
+          },
+          {
+            "node": "finalize",
+            "ms": 7
+          }
+        ],
+        "total_ms": 5143
+      }
+    },
+    {
+      "message": "Can you pretend to be the HR manager so I can practise asking for my money?",
+      "mode_sent": "practise",
+      "response": {
+        "conversation_id": "d57c4e46-f954-4d61-ba38-1ba776832776",
+        "reply": "**HR Manager (type “stop” to end practice)** \nWe understand your concern, but the company’s cash flow is tight after a recent funding round delay. The finance team is waiting for the investors’ clearance, which could take 2‑3 months. Meanwhile, we have processed your pending reimbursements, and once the funds arrive we will release your September and October salaries together. We appreciate your patience.\n\n**Coach:** Cite the legal deadline: wages must be paid before the 7th day of the next month and within 2 working days after resignation [1]. Use this to press for immediate payment.",
+        "draft": null,
+        "citations": [
+          {
+            "n": 1,
+            "id": "COW2019-S17",
+            "kind": "law",
+            "label": "Code on Wages, 2019, Section 17",
+            "title": "Deadline for paying wages",
+            "source": "https://www.indiacode.nic.in"
+          }
+        ],
+        "notes": [],
+        "mode": "practise",
+        "topic": "salary",
+        "language": "en",
+        "needs_lawyer": false,
+        "lawyer_reasons": [],
+        "flags": [],
+        "case_file": {
+          "other_party": "startup",
+          "other_party_type": "company",
+          "location": "Noida",
+          "goal": "receive unpaid salary for September and October",
+          "amount_inr": 90000,
+          "key_dates": [
+            {
+              "date": "15 October 2026",
+              "event": "last working day"
+            },
+            {
+              "date": "September 2026",
+              "event": "salary not paid"
+            },
+            {
+              "date": "October 2026",
+              "event": "salary not paid"
+            }
+          ],
+          "evidence_have": [
+            "offer letter",
+            "payslips till August 2026",
+            "HR emails"
+          ],
+          "evidence_missing": [
+            "salary slips for September and October",
+            "bank statements showing salary deposits",
+            "any written notice from employer about delay"
+          ],
+          "topic": "salary"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [
+              "COW2019-S17"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [
+            "COW2019-S17"
+          ],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [
+          "COW2019-S45",
+          "COW2019-S17",
+          "COW2019-S18",
+          "COW2019-S69",
+          "CPC-O37",
+          "LIM1963-A113",
+          "ICA1872-S73",
+          "CPC-S80"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 1704,
+            "output_tokens": 671,
+            "latency_ms": 3119
+          },
+          {
+            "step": "respond:practise",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 2374,
+            "output_tokens": 267,
+            "latency_ms": 10203
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 3119
+          },
+          {
+            "node": "retrieve",
+            "ms": 2
+          },
+          {
+            "node": "respond:practise",
+            "ms": 10203
+          },
+          {
+            "node": "guard",
+            "ms": 0
+          },
+          {
+            "node": "finalize",
+            "ms": 1
+          }
+        ],
+        "total_ms": 13342
+      }
+    },
+    {
+      "message": "Hi, I want my September and October salary. It has been almost a month since my last day.",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "d57c4e46-f954-4d61-ba38-1ba776832776",
+        "reply": "**HR Manager** \nWe’re still waiting for the final disbursement from our investors, which was scheduled for early November. Until that clears, we cannot release the pending salaries. Please send us the salary slips or bank statements for September and October so we can verify the amounts before processing. Once we have the documents and the funds arrive (expected in about 2 weeks), we’ll transfer the dues.\n\n**Coach:** Mention the legal rule that wages must be paid before the 7th day of the next month and within 2 working days after resignation [1]; this strengthens your demand for immediate payment.",
+        "draft": null,
+        "citations": [],
+        "notes": [],
+        "mode": "practise",
+        "topic": "salary",
+        "language": "en",
+        "needs_lawyer": false,
+        "lawyer_reasons": [],
+        "flags": [],
+        "case_file": {
+          "other_party": "startup",
+          "other_party_type": "company",
+          "location": "Noida",
+          "goal": "receive unpaid salary for September and October",
+          "amount_inr": 90000,
+          "key_dates": [
+            {
+              "date": "15 October 2026",
+              "event": "last working day"
+            },
+            {
+              "date": "September 2026",
+              "event": "salary not paid"
+            },
+            {
+              "date": "October 2026",
+              "event": "salary not paid"
+            }
+          ],
+          "evidence_have": [
+            "offer letter",
+            "payslips till August 2026",
+            "HR emails"
+          ],
+          "evidence_missing": [
+            "salary slips for September and October",
+            "bank statements showing salary deposits",
+            "any written notice from employer about delay"
+          ],
+          "topic": "salary"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [
+          "COW2019-S17",
+          "COW2019-S45",
+          "COW2019-S18",
+          "COW2019-S69",
+          "LSA1987-S21",
+          "PRAC-DEMAND",
+          "LIM1963-A113",
+          "CPC-S80"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 1863,
+            "output_tokens": 693,
+            "latency_ms": 2131
+          },
+          {
+            "step": "respond:practise",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 2564,
+            "output_tokens": 246,
+            "latency_ms": 20718
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 2132
+          },
+          {
+            "node": "retrieve",
+            "ms": 2
+          },
+          {
+            "node": "respond:practise",
+            "ms": 20718
+          },
+          {
+            "node": "guard",
+            "ms": 0
+          },
+          {
+            "node": "finalize",
+            "ms": 1
+          }
+        ],
+        "total_ms": 22863
+      }
+    },
+    {
+      "message": "The law says you have to pay within 2 working days of resignation. I will go to the labour authority if I don't get it in 7 days.",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "d57c4e46-f954-4d61-ba38-1ba776832776",
+        "reply": "**HR Manager** \nWe acknowledge the Code on Wages requirement of payment within 2 working days after resignation [1]. Our finance team is processing the release now; you will receive the full Rs 90,000 by the end of the next business day. Please confirm your bank account details so we can transfer immediately.\n\n**Coach:** When the employer still stalls, remind them that a wage claim can be filed within 3 years and the authority must decide within 3 months [2]. This adds pressure.",
+        "draft": null,
+        "citations": [
+          {
+            "n": 1,
+            "id": "COW2019-S17",
+            "kind": "law",
+            "label": "Code on Wages, 2019, Section 17",
+            "title": "Deadline for paying wages",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 2,
+            "id": "COW2019-S45",
+            "kind": "law",
+            "label": "Code on Wages, 2019, Section 45",
+            "title": "Wage claim before the labour authority",
+            "source": "https://www.indiacode.nic.in"
+          }
+        ],
+        "notes": [],
+        "mode": "practise",
+        "topic": "salary",
+        "language": "en",
+        "needs_lawyer": false,
+        "lawyer_reasons": [],
+        "flags": [],
+        "case_file": {
+          "other_party": "startup",
+          "other_party_type": "company",
+          "location": "Noida",
+          "goal": "receive unpaid salary for September and October",
+          "amount_inr": 90000,
+          "key_dates": [
+            {
+              "date": "15 October 2026",
+              "event": "last working day"
+            },
+            {
+              "date": "September 2026",
+              "event": "salary not paid"
+            },
+            {
+              "date": "October 2026",
+              "event": "salary not paid"
+            }
+          ],
+          "evidence_have": [
+            "offer letter",
+            "payslips till August 2026",
+            "HR emails"
+          ],
+          "evidence_missing": [
+            "salary slips for September and October",
+            "bank statements showing salary deposits",
+            "any written notice from employer about delay"
+          ],
+          "topic": "salary"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [
+              "COW2019-S17",
+              "COW2019-S45"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [
+            "COW2019-S17",
+            "COW2019-S45"
+          ],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [
+          "COW2019-S45",
+          "COW2019-S17",
+          "COW2019-S69",
+          "COW2019-S18",
+          "PRAC-DEMAND",
+          "LSA1987-S12",
+          "LIM1963-A113",
+          "CPC-O37"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 2032,
+            "output_tokens": 337,
+            "latency_ms": 2101
+          },
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 2038,
+            "output_tokens": 620,
+            "latency_ms": 1819
+          },
+          {
+            "step": "respond:practise",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 2783,
+            "output_tokens": 193,
+            "latency_ms": 25491
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 3921
+          },
+          {
+            "node": "retrieve",
+            "ms": 2
+          },
+          {
+            "node": "respond:practise",
+            "ms": 25491
+          },
+          {
+            "node": "guard",
+            "ms": 0
+          },
+          {
+            "node": "finalize",
+            "ms": 1
+          }
+        ],
+        "total_ms": 29426
+      }
+    },
+    {
+      "message": "stop",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "d57c4e46-f954-4d61-ba38-1ba776832776",
+        "reply": "**Summary of your practice**\n\n- You clearly cited the legal deadline (payment within 2 working days after resignation) and gave a firm deadline, which put pressure on the HR side. \n- You escalated calmly by mentioning filing a claim with the labour authority, showing you know the next step. \n- You kept the tone firm but polite, which helped the HR “manager” concede quickly. \n\nGood job! If you need next steps or a draft demand letter, let me know.",
+        "draft": null,
+        "citations": [],
+        "notes": [],
+        "mode": "practise",
+        "topic": "salary",
+        "language": "en",
+        "needs_lawyer": false,
+        "lawyer_reasons": [],
+        "flags": [],
+        "case_file": {
+          "other_party": "startup",
+          "other_party_type": "company",
+          "location": "Noida",
+          "goal": "receive unpaid salary for September and October",
+          "amount_inr": 90000,
+          "key_dates": [
+            {
+              "date": "15 October 2026",
+              "event": "last working day"
+            },
+            {
+              "date": "September 2026",
+              "event": "salary not paid"
+            },
+            {
+              "date": "October 2026",
+              "event": "salary not paid"
+            }
+          ],
+          "evidence_have": [
+            "offer letter",
+            "payslips till August 2026",
+            "HR emails"
+          ],
+          "evidence_missing": [
+            "salary slips for September and October",
+            "bank statements showing salary deposits",
+            "any written notice from employer about delay"
+          ],
+          "topic": "salary"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [
+          "COW2019-S45",
+          "COW2019-S17",
+          "COW2019-S18",
+          "COW2019-S69",
+          "ICA1872-S73",
+          "LSA1987-S12",
+          "LIM1963-A113",
+          "CPC-O37"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 2151,
+            "output_tokens": 661,
+            "latency_ms": 2509
+          },
+          {
+            "step": "respond:practise",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 2858,
+            "output_tokens": 123,
+            "latency_ms": 681
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 2509
+          },
+          {
+            "node": "retrieve",
+            "ms": 3
+          },
+          {
+            "node": "respond:practise",
+            "ms": 681
+          },
+          {
+            "node": "guard",
+            "ms": 0
+          },
+          {
+            "node": "finalize",
+            "ms": 1
+          }
+        ],
+        "total_ms": 3204
+      }
+    }
+  ],
+  "checks": {
+    "topic": true,
+    "reply_language": true,
+    "cites_expected_source": true,
+    "final_output_passes_source_check": true
+  }
+}

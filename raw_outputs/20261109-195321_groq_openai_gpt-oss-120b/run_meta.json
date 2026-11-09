@@ -1,0 +1,22 @@
+{
+  "run_at": "20261109-195321",
+  "models": {
+    "main": "groq:openai/gpt-oss-120b",
+    "router": "groq:openai/gpt-oss-20b"
+  },
+  "cases": 16,
+  "turns": 23,
+  "avg_latency_ms": 7613,
+  "input_tokens": 75736,
+  "output_tokens": 37770,
+  "avg_tokens_per_turn": 4935,
+  "turns_where_first_draft_failed_source_check": 3,
+  "guard_retries": 3,
+  "turns_where_code_stripped_content_after_retry": 1,
+  "est_cost_usd_at_paid_rates": 0.034,
+  "est_cost_usd_per_turn": 0.001479,
+  "price_assumption_per_million_tokens": {
+    "input": 0.15,
+    "output": 0.6
+  }
+}

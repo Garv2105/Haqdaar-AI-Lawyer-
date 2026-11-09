@@ -1,0 +1,184 @@
+{
+  "case": {
+    "id": "C02_deposit_hinglish",
+    "tests": "Hinglish (Roman Hindi) input, PG advance, should reply in Hinglish",
+    "turns": [
+      {
+        "message": "bhai mera PG owner 15000 advance wapas nahi kar raha, maine 2 mahine pehle PG chhoda tha Pune me. har baar bolta hai next week dunga. kya kar sakta hu?"
+      }
+    ],
+    "expect": {
+      "topic": "deposit",
+      "language": "hinglish"
+    }
+  },
+  "turns": [
+    {
+      "message": "bhai mera PG owner 15000 advance wapas nahi kar raha, maine 2 mahine pehle PG chhoda tha Pune me. har baar bolta hai next week dunga. kya kar sakta hu?",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "905f00bc-245b-4446-b0bd-e7cc3a61f4aa",
+        "reply": "**Short answer:** \nZyada tar states mein landlord ko vacant possession milte hi security deposit wapas dena hota hai, sirf actual dues katne ke baad [1]. Isliye aapke paas strong case lagta hai, lekin ye Model Tenancy Act sirf un states mein lagu hota hai jinhone apna tenancy law adopt kiya ho – Maharashtra ka status mujhe confirm nahi hai. \n\n**Aapke options (easy se hard):**\n\n1. **Written demand (demand letter)** \n - Ek simple patra likho: “15,000 Rs ka advance deposit wapas karo, 7 din ke andar nahi mila to legal action lunga.” \n - Cost: free (postage ya courier). \n - Jo bhi proof hai (bank statement, chat, WhatsApp) usko attach karo. \n - Ye pehla step hota hai, court bhi isse dekh sakta hai.\n\n2. **Free legal‑aid & advice** \n - NALSA ka helpline 15100 call karo; agar aapki income limit ke andar hain to free lawyer mil sakta hai [2]. \n - Unko apni situation aur jo documents hai (bank statement, chat) dikhaye.\n\n3. **Lok Adalat (people’s court) settlement** \n - Dono parties ko agree karna hota hai. Agar owner maan le to aap dono milke settlement kar sakte hain; decision final hota hai, appeal nahi hoti [3]. \n - Cost: usually zero ya nominal. \n - Aapko written demand aur proof dikhana padega.\n\n4. **Summary suit under CPC Order XXXVII** \n - Agar aapke paas likhit rent agreement ya receipt hai, to ek “summary suit” file kar sakte hain – ye fast civil suit hota hai, dusri party ko sirf limited defence milti hai [4]. \n - Cost: lawyer fees (agar free legal aid mil jaye to kam). \n - Court ka process 2‑3 mahine tak chal sakta hai.\n\n5. **Ordinary civil suit for money recovery** \n - General suit file karna padta hai, 3 saal ka limitation period hai – aapka right aaj se 3 saal ke andar hi file karna hoga [5]. \n - Cost: court fees + lawyer fees. \n - Time: 6‑12 mahine ya usse zyada.\n\n**Important deadline:** \nDeposit recovery ke liye suit file karne ka time limit 3 saal hai, to jaldi action lein [5].\n\n**Jo documents chahiye:** \n- Bank statement ya receipt showing Rs 15,000 advance. \n- Lease agreement ya koi likhit notice of tenancy (agar hai). \n- Owner ke saath ki gayi messages/WhatsApp chats jisme deposit ki baat ho.\n\n**Mujhe sure nahi hai:** \n- Maharashtra ne Model Tenancy Act adopt kiya hai ya nahi, isliye exact statutory right confirm nahi kar sakta. \n- Owner ke against koi specific consumer‑forum jurisdiction hai ya nahi.\n\n**Lawyer ki zarurat:** \nAgar owner demand letter ka jawab nahi deta, ya aapko likhit agreement/receipt nahi mil raha, to ek lawyer se milna behtar rahega. Free legal aid ke liye 15100 call kar sakte hain. \n\n*Main lawyer nahi hoon, bas basic guidance de raha hoon.*",
+        "draft": null,
+        "citations": [
+          {
+            "n": 1,
+            "id": "MTA2021-S11",
+            "kind": "law",
+            "label": "Model Tenancy Act, 2021, Section 11",
+            "title": "Cap on security deposit and its refund",
+            "source": "https://prsindia.org/billtrack/the-model-tenancy-act-2021"
+          },
+          {
+            "n": 2,
+            "id": "LSA1987-S12",
+            "kind": "law",
+            "label": "Legal Services Authorities Act, 1987, Section 12",
+            "title": "Who gets a free government lawyer",
+            "source": "https://nalsa.gov.in"
+          },
+          {
+            "n": 3,
+            "id": "LSA1987-S21",
+            "kind": "law",
+            "label": "Legal Services Authorities Act, 1987, Section 21",
+            "title": "Lok Adalat settlement is final",
+            "source": "https://nalsa.gov.in"
+          },
+          {
+            "n": 4,
+            "id": "CPC-O37",
+            "kind": "law",
+            "label": "Code of Civil Procedure, 1908, Order XXXVII",
+            "title": "Summary suit for a fixed sum under a written contract",
+            "source": "https://www.indiacode.nic.in"
+          },
+          {
+            "n": 5,
+            "id": "LIM1963-A113",
+            "kind": "law",
+            "label": "Limitation Act, 1963, Schedule, Article 113",
+            "title": "Time limit for money recovery suits",
+            "source": "https://www.indiacode.nic.in"
+          }
+        ],
+        "notes": [],
+        "mode": "explain",
+        "topic": "deposit",
+        "language": "hinglish",
+        "needs_lawyer": false,
+        "lawyer_reasons": [],
+        "flags": [],
+        "case_file": {
+          "other_party": "PG owner",
+          "other_party_type": "landlord",
+          "location": "Pune",
+          "goal": "recover advance deposit",
+          "amount_inr": 15000,
+          "key_dates": [
+            {
+              "date": "2 months ago",
+              "event": "left PG"
+            }
+          ],
+          "evidence_have": [],
+          "evidence_missing": [
+            "proof of advance payment (receipt, bank statement)",
+            "lease agreement or written notice of tenancy"
+          ],
+          "topic": "deposit"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [
+              "MTA2021-S11",
+              "LSA1987-S12",
+              "LSA1987-S21",
+              "CPC-O37",
+              "LIM1963-A113"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [
+            "MTA2021-S11",
+            "LSA1987-S12",
+            "LSA1987-S21",
+            "CPC-O37",
+            "LIM1963-A113"
+          ],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [
+          "MTA2021-S11",
+          "ICA1872-S73",
+          "LIM1963-A113",
+          "CPC-O37",
+          "CPC-S80",
+          "LSA1987-S12",
+          "LSA1987-S21",
+          "CRIM-2024"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 853,
+            "output_tokens": 354,
+            "latency_ms": 1044
+          },
+          {
+            "step": "respond:explain",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 1641,
+            "output_tokens": 1034,
+            "latency_ms": 2707
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 1044
+          },
+          {
+            "node": "retrieve",
+            "ms": 5
+          },
+          {
+            "node": "respond:explain",
+            "ms": 2708
+          },
+          {
+            "node": "guard",
+            "ms": 4
+          },
+          {
+            "node": "finalize",
+            "ms": 9
+          }
+        ],
+        "total_ms": 3792
+      }
+    }
+  ],
+  "checks": {
+    "topic": true,
+    "reply_language": true,
+    "final_output_passes_source_check": true
+  }
+}
