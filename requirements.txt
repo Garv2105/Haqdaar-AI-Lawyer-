@@ -1,0 +1,15 @@
+fastapi==0.162.2
+uvicorn==0.54.0
+pydantic==2.13.5
+langgraph==1.2.20
+langchain-core==1.7.6
+langchain-openai==1.7.4
+langchain-google-genai==4.4.3
+langchain-anthropic==1.7.10
+SQLAlchemy==2.1.8
+psycopg[binary]==3.3.8
+rank-bm25==0.2.2
+PyYAML==6.0.3
+python-dotenv==1.2.3
+httpx==0.28.1
+pytest==9.1.1

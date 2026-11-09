@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haqdaar - legal help in your language</title>
+<style>
+  :root {
+    --ink: #1d2433; --muted: #5d6677; --line: #e3e0d8; --paper: #fbfaf6; --card: #ffffff;
+    --accent: #0f6b5c; --accent-soft: #e4f2ee; --warn: #9a4a07; --warn-soft: #fdf1e3; --user: #1d2433;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", "Noto Sans", "Noto Sans Devanagari", system-ui, sans-serif; color: var(--ink); background: var(--paper); }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 22px; border-bottom: 1px solid var(--line); background: var(--card); flex-wrap: wrap; }
+  .brand { display: flex; align-items: baseline; gap: 10px; }
+  .brand h1 { margin: 0; font-size: 22px; letter-spacing: .2px; }
+  .brand span { color: var(--muted); font-size: 14px; }
+  select, button, textarea { font: inherit; }
+  select { padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+  .layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; height: calc(100vh - 64px); }
+  @media (max-width: 860px) { .layout { grid-template-columns: 1fr; height: auto; } aside { border-left: 0; border-top: 1px solid var(--line); } }
+  main { display: flex; flex-direction: column; min-height: 0; }
+  .banner { margin: 12px 22px 0; padding: 9px 12px; background: var(--warn-soft); color: var(--warn); border-radius: 8px; font-size: 13px; }
+  #log { flex: 1; overflow-y: auto; padding: 18px 22px; display: flex; flex-direction: column; gap: 14px; }
+  .msg { max-width: 780px; padding: 12px 15px; border-radius: 12px; line-height: 1.55; white-space: pre-wrap; word-wrap: break-word; }
+  .msg.user { align-self: flex-end; background: var(--user); color: #fff; border-bottom-right-radius: 3px; }
+  .msg.bot { align-self: flex-start; background: var(--card); border: 1px solid var(--line); border-bottom-left-radius: 3px; }
+  .meta { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px; }
+  .tag { font-size: 11px; padding: 2px 8px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); text-transform: uppercase; letter-spacing: .4px; }
+  .tag.lawyer { background: var(--warn-soft); color: var(--warn); }
+  .draft { margin-top: 10px; border: 1px dashed var(--accent); border-radius: 8px; background: #fcfffe; }
+  .draft pre { margin: 0; padding: 12px; white-space: pre-wrap; font-family: "Georgia", serif; font-size: 14px; }
+  .draft .bar { display: flex; gap: 8px; padding: 8px 12px; border-top: 1px dashed var(--accent); }
+  .cites { margin-top: 10px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 8px; }
+  .cites div { margin: 2px 0; }
+  .cites a { color: var(--accent); }
+  .note { margin-top: 8px; font-size: 13px; color: var(--warn); }
+  .small { background: none; border: 1px solid var(--line); border-radius: 6px; padding: 3px 9px; cursor: pointer; font-size: 12px; color: var(--muted); }
+  .modes { display: flex; gap: 6px; flex-wrap: wrap; padding: 10px 22px 0; }
+  .mode { border: 1px solid var(--line); background: var(--card); padding: 6px 12px; border-radius: 99px; cursor: pointer; font-size: 13px; }
+  .mode.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  form { display: flex; gap: 8px; padding: 12px 22px 18px; align-items: flex-end; }
+  textarea { flex: 1; resize: none; min-height: 48px; max-height: 180px; padding: 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
+  .btn { border: 0; border-radius: 10px; padding: 12px 16px; cursor: pointer; background: var(--accent); color: #fff; }
+  .btn.ghost { background: var(--card); color: var(--ink); border: 1px solid var(--line); }
+  .btn.rec { background: #b42318; color: #fff; }
+  .btn:disabled { opacity: .5; cursor: wait; }
+  aside { border-left: 1px solid var(--line); background: var(--card); padding: 18px; overflow-y: auto; }
+  aside h2 { font-size: 15px; margin: 0 0 4px; }
+  aside p.hint { margin: 0 0 14px; color: var(--muted); font-size: 13px; }
+  .field { margin-bottom: 12px; font-size: 14px; }
+  .field b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); margin-bottom: 3px; }
+  .field ul { margin: 0; padding-left: 18px; }
+  .empty { color: var(--muted); font-style: italic; }
+  .typing { color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><h1>Haqdaar</h1><span>free help with everyday legal problems</span></div>
+  <div>
+    <label for="lang" style="font-size:13px;color:var(--muted)">Language</label>
+    <select id="lang">
+      <option value="auto" data-sr="en-IN">Auto-detect</option>
+      <option value="en" data-sr="en-IN">English</option>
+      <option value="hi" data-sr="hi-IN">हिन्दी</option>
+      <option value="hinglish" data-sr="hi-IN">Hinglish</option>
+      <option value="ta" data-sr="ta-IN">தமிழ்</option>
+      <option value="bn" data-sr="bn-IN">বাংলা</option>
+      <option value="mr" data-sr="mr-IN">मराठी</option>
+      <option value="te" data-sr="te-IN">తెలుగు</option>
+      <option value="gu" data-sr="gu-IN">ગુજરાતી</option>
+      <option value="kn" data-sr="kn-IN">ಕನ್ನಡ</option>
+      <option value="ml" data-sr="ml-IN">മലയാളം</option>
+      <option value="pa" data-sr="pa-IN">ਪੰਜਾਬੀ</option>
+    </select>
+    <button class="small" id="newchat" type="button">New case</button>
+  </div>
+</header>
+<div class="layout">
+  <main>
+    <div class="banner">Haqdaar is not a lawyer. It covers security deposits, consumer refunds, unpaid salary and notices you received. For police, family or court-date matters, call NALSA 15100 for a free lawyer. In danger, call 112.</div>
+    <div id="log"></div>
+    <div class="modes" id="modes">
+      <button type="button" class="mode on" data-mode="auto">Auto</button>
+      <button type="button" class="mode" data-mode="build_case">Build my case</button>
+      <button type="button" class="mode" data-mode="explain">Where do I stand?</button>
+      <button type="button" class="mode" data-mode="draft">Draft a notice / complaint</button>
+      <button type="button" class="mode" data-mode="practise">Practise with the other side</button>
+      <button type="button" class="mode" data-mode="explain_notice">Explain a notice I got</button>
+    </div>
+    <form id="form">
+      <button type="button" class="btn ghost" id="mic" title="Speak">🎤</button>
+      <textarea id="input" placeholder="Tell me what happened, in your own words. Example: My landlord has not returned my Rs 40,000 deposit for 2 months."></textarea>
+      <button class="btn" id="send" type="submit">Send</button>
+    </form>
+  </main>
+  <aside>
+    <h2>Your case file</h2>
+    <p class="hint">Built from what you tell me. Nothing here is guessed.</p>
+    <div id="case"><div class="empty">Tell me your problem to start.</div></div>
+  </aside>
+</div>
+<script>
+const $ = (s) => document.querySelector(s);
+const log = $("#log"), input = $("#input"), send = $("#send"), langSel = $("#lang");
+let conversationId = null, mode = "auto";
+try { conversationId = localStorage.getItem("haqdaar_conv"); } catch (e) {}
+
+document.querySelectorAll(".mode").forEach((b) => b.addEventListener("click", () => {
+  document.querySelectorAll(".mode").forEach((x) => x.classList.remove("on"));
+  b.classList.add("on"); mode = b.dataset.mode;
+}));
+
+$("#newchat").addEventListener("click", () => {
+  conversationId = null; try { localStorage.removeItem("haqdaar_conv"); } catch (e) {}
+  log.innerHTML = ""; renderCase({}); greet();
+});
+
+function esc(s) { return String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+
+function srLang() {
+  const opt = langSel.selectedOptions[0];
+  return opt.dataset.sr || "en-IN";
+}
+
+function speak(text, lang) {
+  if (!("speechSynthesis" in window)) return alert("Read-aloud is not supported in this browser.");
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text.replace(/\[\d+\]/g, ""));
+  const map = { hi: "hi-IN", hinglish: "hi-IN", ta: "ta-IN", bn: "bn-IN", mr: "mr-IN", te: "te-IN", gu: "gu-IN", kn: "kn-IN", ml: "ml-IN", pa: "pa-IN", en: "en-IN" };
+  u.lang = map[lang] || "en-IN";
+  speechSynthesis.speak(u);
+}
+
+function addUser(text) {
+  const d = document.createElement("div"); d.className = "msg user"; d.textContent = text; log.appendChild(d); log.scrollTop = log.scrollHeight;
+}
+
+function addBot(r) {
+  const d = document.createElement("div"); d.className = "msg bot";
+  const tags = [];
+  if (r.topic && r.topic !== "out_of_scope") tags.push(`<span class="tag">${esc(r.topic)}</span>`);
+  if (r.mode) tags.push(`<span class="tag">${esc(String(r.mode).replace("_", " "))}</span>`);
+  if (r.needs_lawyer) tags.push(`<span class="tag lawyer" title="${esc((r.lawyer_reasons || []).join("; "))}">see a lawyer</span>`);
+  let html = tags.length ? `<div class="meta">${tags.join("")}</div>` : "";
+  html += `<div>${esc(r.reply)}</div>`;
+  if (r.draft) {
+    html += `<div class="draft"><pre>${esc(r.draft)}</pre><div class="bar"><button class="small" data-act="copy">Copy</button><button class="small" data-act="download">Download .txt</button></div></div>`;
+  }
+  (r.notes || []).forEach((n) => { html += `<div class="note">Note: ${esc(n)}</div>`; });
+  if (r.citations && r.citations.length) {
+    html += `<div class="cites"><b>Sources (checked ${esc(window.verifiedOn || "")})</b>` + r.citations.map((c) =>
+      `<div>[${c.n}] ${esc(c.label)}${c.kind === "practice" ? " (practical tip, not law)" : ""} - ${esc(c.title)}${c.source ? ` · <a href="${esc(c.source)}" target="_blank" rel="noopener">source</a>` : ""}</div>`).join("") + `</div>`;
+  }
+  html += `<div style="margin-top:8px"><button class="small" data-act="speak">🔊 Read aloud</button></div>`;
+  d.innerHTML = html;
+  d.querySelector('[data-act="speak"]').addEventListener("click", () => speak(r.reply, r.language));
+  if (r.draft) {
+    d.querySelector('[data-act="copy"]').addEventListener("click", () => navigator.clipboard.writeText(r.draft));
+    d.querySelector('[data-act="download"]').addEventListener("click", () => {
+      const blob = new Blob([r.draft], { type: "text/plain" });
+      const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "haqdaar-draft.txt"; a.click();
+    });
+  }
+  log.appendChild(d); log.scrollTop = log.scrollHeight;
+}
+
+function renderCase(c) {
+  const box = $("#case");
+  if (!c || !Object.keys(c).length) { box.innerHTML = '<div class="empty">Tell me your problem to start.</div>'; return; }
+  const list = (arr) => arr && arr.length ? `<ul>${arr.map((x) => `<li>${esc(typeof x === "object" ? `${x.date}: ${x.event}` : x)}</li>`).join("")}</ul>` : '<span class="empty">not yet</span>';
+  box.innerHTML = `
+    <div class="field"><b>Problem type</b>${esc(c.topic || "-")}</div>
+    <div class="field"><b>Other side</b>${esc(c.other_party || "-")} ${c.other_party_type ? `(${esc(c.other_party_type)})` : ""}</div>
+    <div class="field"><b>Amount</b>${c.amount_inr ? "Rs " + Number(c.amount_inr).toLocaleString("en-IN") : "-"}</div>
+    <div class="field"><b>Place</b>${esc(c.location || "-")}</div>
+    <div class="field"><b>What you want</b>${esc(c.goal || "-")}</div>
+    <div class="field"><b>Timeline</b>${list(c.key_dates)}</div>
+    <div class="field"><b>Proof you have</b>${list(c.evidence_have)}</div>
+    <div class="field"><b>Proof to collect</b>${list(c.evidence_missing)}</div>`;
+}
+
+function greet() {
+  addBot({ reply: "Namaste! I can help with a security deposit your landlord won't return, a refund that never came, unpaid salary, or a legal notice you don't understand.\n\nType or tap 🎤 and tell me what happened, in any language you are comfortable with.", citations: [] });
+}
+
+async function sendMessage(text) {
+  addUser(text); input.value = ""; send.disabled = true;
+  const wait = document.createElement("div"); wait.className = "typing"; wait.textContent = "Haqdaar is thinking…"; log.appendChild(wait);
+  try {
+    const res = await fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ message: text, conversation_id: conversationId, mode, language: langSel.value }) });
+    if (!res.ok) throw new Error(await res.text());
+    const r = await res.json();
+    conversationId = r.conversation_id; try { localStorage.setItem("haqdaar_conv", conversationId); } catch (e) {}
+    wait.remove(); addBot(r); renderCase(r.case_file);
+  } catch (e) {
+    wait.remove(); addBot({ reply: "Sorry, something went wrong on my side. Please try again in a minute.\n(" + e.message.slice(0, 200) + ")", citations: [] });
+  } finally { send.disabled = false; input.focus(); }
+}
+
+$("#form").addEventListener("submit", (e) => { e.preventDefault(); const t = input.value.trim(); if (t) sendMessage(t); });
+input.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("#form").requestSubmit(); } });
+
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+let rec = null;
+$("#mic").addEventListener("click", () => {
+  if (!SR) return alert("Voice input needs Chrome or Edge. You can still type.");
+  if (rec) { rec.stop(); return; }
+  rec = new SR(); rec.lang = srLang(); rec.interimResults = true; rec.continuous = true;
+  const base = input.value ? input.value + " " : "";
+  rec.onresult = (ev) => { input.value = base + Array.from(ev.results).map((r) => r[0].transcript).join(" "); };
+  rec.onend = () => { rec = null; $("#mic").classList.remove("rec"); $("#mic").textContent = "🎤"; };
+  rec.onerror = () => {};
+  rec.start(); $("#mic").classList.add("rec"); $("#mic").textContent = "■";
+});
+
+fetch("/api/coverage").then((r) => r.json()).then((c) => { window.verifiedOn = c.verified_on; }).catch(() => {});
+
+(async () => {
+  if (conversationId) {
+    try {
+      const r = await fetch(`/api/conversation/${conversationId}`);
+      if (r.ok) {
+        const t = await r.json();
+        t.messages.forEach((m) => {
+          if (m.role === "user") return addUser(m.content);
+          const meta = m.meta || {};
+          const reply = meta.draft ? m.content.replace("\n\n" + meta.draft, "") : m.content;
+          addBot({ reply, draft: meta.draft, citations: meta.citations || [], topic: meta.topic, mode: meta.mode, needs_lawyer: meta.needs_lawyer });
+        });
+        renderCase(t.case_file);
+        if (t.messages.length) return;
+      }
+    } catch (e) {}
+  }
+  greet();
+})();
+</script>
+</body>
+</html>
