@@ -1,0 +1,191 @@
+{
+  "case": {
+    "id": "C09_notice_unverifiable_reference",
+    "tests": "Notice cites a section that is not in the verified sources - bot must not explain it from memory",
+    "turns": [
+      {
+        "message": "My landlord's lawyer sent me a notice saying under Section 106 of the Transfer of Property Act my tenancy is terminated and I must vacate in 15 days or he will file an eviction suit. I have lived here 4 years in Indore. Is this valid?"
+      }
+    ],
+    "expect": {
+      "topic": "notice",
+      "language": "en",
+      "needs_lawyer": true
+    }
+  },
+  "turns": [
+    {
+      "message": "My landlord's lawyer sent me a notice saying under Section 106 of the Transfer of Property Act my tenancy is terminated and I must vacate in 15 days or he will file an eviction suit. I have lived here 4 years in Indore. Is this valid?",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "852d0fe0-0138-4453-9d02-4cc371a84df1",
+        "reply": "**Who sent the notice and what it says** \nThe notice came from your landlord’s lawyer, acting on the landlord’s behalf. It says that, under “[reference removed: not in verified sources] of the Transfer of Property Act,” your tenancy is terminated and you must leave the flat within **15 days** of the notice. It also warns that the landlord will file an eviction suit if you do not vacate.\n\n**What the notice is asking for** \n- Vacate the premises. \n- Deadline: “within 15 days of this notice” (quote exactly as written).\n\n**Legal basis mentioned** \nThe notice relies on “[reference removed: not in verified sources] of the Transfer of Property Act.” I do not have that provision in my source material, so I cannot confirm whether it applies to your case. A lawyer should check the exact wording of that section and how it fits your lease.\n\n**What can happen if you ignore it** \nA lawyer’s notice is only a demand, not a court order. Ignoring it may lead the landlord to start a civil eviction suit, which you would then have to defend in court. [1]\n\n**What you can do now – short list** \n\n1. **Read the lease** – see if it is a fixed‑term or periodic tenancy and what notice period it requires. \n2. **Pay or vacate** – if you agree to leave, do so before the 15‑day deadline. \n3. **Negotiate** – contact the landlord or his lawyer to ask for more time or a settlement. \n4. **Reply in writing** – if you disagree, send a written response (email, WhatsApp, or a legal notice by Speed Post) stating your position and keep proof of sending. [1] \n5. **Get legal help** – because the notice threatens an eviction suit, speak to a lawyer right away. You can call the free legal‑aid helpline **15100** for assistance. [2]\n\nIf you are unsure about the legal reference or your rights, a lawyer can review the lease and the notice and advise the best step.",
+        "draft": null,
+        "citations": [
+          {
+            "n": 1,
+            "id": "PRAC-REPLY",
+            "kind": "practice",
+            "label": "Practical guidance",
+            "title": "How to treat a legal notice you received",
+            "source": ""
+          },
+          {
+            "n": 2,
+            "id": "LSA1987-S12",
+            "kind": "law",
+            "label": "Legal Services Authorities Act, 1987, Section 12",
+            "title": "Who gets a free government lawyer",
+            "source": "https://nalsa.gov.in"
+          }
+        ],
+        "notes": [],
+        "mode": "explain_notice",
+        "topic": "notice",
+        "language": "en",
+        "needs_lawyer": true,
+        "lawyer_reasons": [
+          "you are being threatened with eviction, which has strict legal steps"
+        ],
+        "flags": [
+          "eviction"
+        ],
+        "case_file": {
+          "other_party": "landlord",
+          "other_party_type": "landlord",
+          "location": "Indore",
+          "goal": "understand validity of termination notice",
+          "key_dates": [
+            {
+              "date": "15 days from notice",
+              "event": "required vacate period"
+            }
+          ],
+          "evidence_have": [
+            "notice from landlord's lawyer"
+          ],
+          "evidence_missing": [
+            "copy of lease agreement or rental contract"
+          ],
+          "topic": "notice"
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [
+              "PRAC-REPLY",
+              "LSA1987-S12"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [
+              "Section 106"
+            ],
+            "case_law": [],
+            "outdated": [],
+            "violations": 1
+          },
+          {
+            "attempt": 1,
+            "valid_tags": [
+              "PRAC-REPLY",
+              "LSA1987-S12"
+            ],
+            "invalid_tags": [],
+            "unverified_mentions": [
+              "Section 106"
+            ],
+            "case_law": [],
+            "outdated": [],
+            "violations": 1
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [
+            "PRAC-REPLY",
+            "LSA1987-S12"
+          ],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 1
+        },
+        "sources_offered": [
+          "NI1881-S138",
+          "PRAC-REPLY",
+          "NI1881-S142",
+          "CPC-O37",
+          "CPC-S80",
+          "PRAC-DEMAND",
+          "LSA1987-S12",
+          "LIM1963-A113"
+        ],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 861,
+            "output_tokens": 415,
+            "latency_ms": 1759
+          },
+          {
+            "step": "respond:explain_notice",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 1681,
+            "output_tokens": 795,
+            "latency_ms": 2471
+          },
+          {
+            "step": "respond:explain_notice",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 1731,
+            "output_tokens": 660,
+            "latency_ms": 2319
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 1760
+          },
+          {
+            "node": "retrieve",
+            "ms": 1
+          },
+          {
+            "node": "respond:explain_notice",
+            "ms": 2472
+          },
+          {
+            "node": "guard",
+            "ms": 7
+          },
+          {
+            "node": "respond:explain_notice",
+            "ms": 2322
+          },
+          {
+            "node": "guard",
+            "ms": 4
+          },
+          {
+            "node": "finalize",
+            "ms": 12
+          }
+        ],
+        "total_ms": 6602
+      }
+    }
+  ],
+  "checks": {
+    "topic": true,
+    "reply_language": true,
+    "lawyer_flag": true,
+    "final_output_passes_source_check": true
+  }
+}

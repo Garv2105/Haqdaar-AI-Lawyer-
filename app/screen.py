@@ -20,6 +20,9 @@ PATTERNS = {
         r"\bland dispute\b", r"\bproperty (?:title|partition|inheritance)\b", r"\b(?:father|mother|grandfather|grandmother)'?s? will\b", r"\bwill deed\b",
         r"\bzameen\b", r"ज़मीन|जमीन", r"\bbatwara\b", r"\bancestral\b",
     ],
+    "eviction": [
+        r"\bevict\w*", r"\bvacate\b.{0,40}\b(?:days?|notice|suit)\b", r"बेदखल", r"\bkhali kar(?:o|na|ne)\b.{0,30}\b(?:notice|din)\b",
+    ],
     "court_date": [
         r"\bsummons\b", r"\bcourt (?:date|hearing|case against me)\b", r"\bnext date\b", r"समन", r"\bpeshi\b", r"पेशी",
     ],
@@ -32,6 +35,7 @@ REASONS = {
     "criminal": "this involves police or a criminal matter",
     "family": "this is a family law matter",
     "property_title": "this is a property ownership or inheritance dispute",
+    "eviction": "you are being threatened with eviction, which has strict legal steps",
     "court_date": "there may be a court date, which you must not miss",
 }
 

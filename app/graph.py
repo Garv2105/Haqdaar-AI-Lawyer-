@@ -6,7 +6,7 @@ from typing import Any, TypedDict
 from langgraph.graph import END, START, StateGraph
 
 from app import guard, knowledge, prompts
-from app.lang import detect
+from app.lang import detect, reconcile
 from app.llm import Completion, parse_json
 from app.screen import EMERGENCY_REPLY, screen
 
@@ -18,6 +18,7 @@ TOPIC_HINTS = {
 }
 VALID_MODES = {"build_case", "explain", "draft", "practise", "explain_notice", "chitchat"}
 VALID_TOPICS = {"deposit", "consumer", "salary", "notice", "out_of_scope"}
+OUT_OF_SCOPE_FLAGS = ("criminal", "family", "property_title")
 
 
 class TurnState(TypedDict, total=False):
@@ -158,7 +159,7 @@ def build_graph(llm, settings):
                 topic = previous_topic
         language = state.get("forced_language")
         if language in (None, "", "auto"):
-            language = understanding.get("language") or detect(state["user_message"])
+            language = reconcile(understanding.get("language"), state["user_message"])
         language = language if language in prompts.LANGUAGE_NAMES else detect(state["user_message"])
         new_case = _merge_case(case, understanding.get("facts_update") or {})
         if topic in knowledge.TOPICS:
@@ -288,6 +289,9 @@ def build_graph(llm, settings):
         return "emergency" if "emergency" in state["screen"]["flags"] else "understand"
 
     def after_understand(state: TurnState) -> str:
+        flagged = any(f in state["screen"]["flags"] for f in OUT_OF_SCOPE_FLAGS)
+        if state["topic"] == "out_of_scope" and (flagged or state["mode"] != "chitchat"):
+            return "out_of_scope"
         if state["mode"] == "chitchat":
             return "respond"
         if state["topic"] == "out_of_scope":

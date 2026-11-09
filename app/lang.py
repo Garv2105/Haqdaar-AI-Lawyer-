@@ -29,3 +29,21 @@ def detect(text: str) -> str:
     if words and sum(w in HINGLISH_WORDS for w in words) / len(words) >= 0.12:
         return "hinglish"
     return "en"
+
+
+LATIN = {"en", "hinglish"}
+
+
+def script_family(code: str) -> str:
+    if code in LATIN:
+        return "latin"
+    if code in ("hi", "mr"):
+        return "devanagari"
+    return code
+
+
+def reconcile(model_code: str | None, text: str) -> str:
+    detected = detect(text)
+    if not model_code or script_family(model_code) != script_family(detected):
+        return detected
+    return model_code

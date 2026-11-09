@@ -1,0 +1,110 @@
+{
+  "case": {
+    "id": "C10_out_of_scope_divorce",
+    "tests": "Family law matter must be declined with a referral, no legal citations",
+    "turns": [
+      {
+        "message": "meri shaadi ko 3 saal hue hain, husband ke saath nahi rehna, divorce kaise milega aur bachche ki custody?"
+      }
+    ],
+    "expect": {
+      "topic": "out_of_scope",
+      "needs_lawyer": true,
+      "no_citations": true
+    }
+  },
+  "turns": [
+    {
+      "message": "meri shaadi ko 3 saal hue hain, husband ke saath nahi rehna, divorce kaise milega aur bachche ki custody?",
+      "mode_sent": "auto",
+      "response": {
+        "conversation_id": "cc2978c7-d3be-423d-a371-bc855a56952f",
+        "reply": "Aapki situation samajh sakta hoon, aur aapke liye best wishes. Yeh divorce aur bachche ki custody ka mamla ek specialist lawyer ka kaam hai, isliye main aapko specific advice nahi de sakta—galat salah se aapko nuksan ho sakta hai. Aap free government lawyer ke liye eligible ho sakte hain; NALSA ko 15100 par call karein ya apne district court ke District Legal Services Authority (DLSA) ka visit karein. Agar koi turant khatra mehsoos ho, to 112 par call karein. Main security deposit, consumer refund, unpaid salary, ya legal notice ko samajhne mein madad kar sakta hoon. कृपया professional legal help lein.",
+        "draft": null,
+        "citations": [],
+        "notes": [],
+        "mode": "out_of_scope",
+        "topic": "out_of_scope",
+        "language": "hinglish",
+        "needs_lawyer": true,
+        "lawyer_reasons": [
+          "this is a family law matter"
+        ],
+        "flags": [
+          "family"
+        ],
+        "case_file": {
+          "key_dates": [],
+          "evidence_have": [],
+          "evidence_missing": []
+        },
+        "guard": [
+          {
+            "attempt": 0,
+            "valid_tags": [],
+            "invalid_tags": [],
+            "unverified_mentions": [],
+            "case_law": [],
+            "outdated": [],
+            "violations": 0
+          }
+        ],
+        "final_guard": {
+          "valid_tags": [],
+          "invalid_tags": [],
+          "unverified_mentions": [],
+          "case_law": [],
+          "outdated": [],
+          "violations": 0,
+          "stripped_after_retry": 0
+        },
+        "sources_offered": [],
+        "usage": [
+          {
+            "step": "understand",
+            "model": "groq:openai/gpt-oss-20b",
+            "input_tokens": 836,
+            "output_tokens": 405,
+            "latency_ms": 1219
+          },
+          {
+            "step": "out_of_scope",
+            "model": "groq:openai/gpt-oss-120b",
+            "input_tokens": 293,
+            "output_tokens": 269,
+            "latency_ms": 876
+          }
+        ],
+        "trace": [
+          {
+            "node": "screen",
+            "ms": 0
+          },
+          {
+            "node": "understand",
+            "ms": 1219
+          },
+          {
+            "node": "out_of_scope",
+            "ms": 876
+          },
+          {
+            "node": "guard",
+            "ms": 3
+          },
+          {
+            "node": "finalize",
+            "ms": 3
+          }
+        ],
+        "total_ms": 2118
+      }
+    }
+  ],
+  "checks": {
+    "topic": true,
+    "lawyer_flag": true,
+    "no_citations": true,
+    "final_output_passes_source_check": true
+  }
+}
