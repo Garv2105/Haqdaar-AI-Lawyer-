@@ -49,6 +49,16 @@ def test_guard_flags_outdated_law():
     assert "COW2019-S69" in r.outdated
 
 
+def test_unicode_and_single_bracket_ids_are_normalized():
+    raw = "Refund rule [[MTA2021\u2011S11]] and limit [LIM1963\u2013A113] and bogus [[ipc\u2011420]]."
+    text = guard.normalize_tags(raw)
+    assert "[[MTA2021-S11]]" in text and "[[LIM1963-A113]]" in text and "[[IPC-420]]" in text
+    r = guard.check(text, ["MTA2021-S11", "LIM1963-A113"])
+    assert r.valid_tags == ["MTA2021-S11", "LIM1963-A113"] and r.invalid_tags == ["IPC-420"]
+    rendered, cites = guard.render_citations(guard.enforce(text, ["MTA2021-S11", "LIM1963-A113"], r), ["MTA2021-S11", "LIM1963-A113"])
+    assert "[[" not in rendered and len(cites) == 2
+
+
 def test_render_citations_numbers_in_order():
     text, cites = guard.render_citations("A [[COW2019-S45]] B [[COW2019-S17]] C [[COW2019-S45]]", ["COW2019-S17", "COW2019-S45"])
     assert text == "A [1] B [2] C [1]"

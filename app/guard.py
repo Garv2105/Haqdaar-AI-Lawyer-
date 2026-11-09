@@ -3,7 +3,9 @@ from dataclasses import dataclass, field
 
 from app.knowledge import provisions_by_id
 
-TAG = re.compile(r"\[\[([A-Z0-9][A-Z0-9\-]*)\]\]")
+TAG = re.compile(r"\[\[([^\[\]\n]{1,60})\]\]")
+DASHES = dict.fromkeys(map(ord, "\u2010\u2011\u2012\u2013\u2014\u2015\u2212\ufe58\ufe63\uff0d"), "-")
+SINGLE_TAG = re.compile(r"(?<!\[)\[([A-Za-z]{2,}[0-9]*\s*[-\u2010-\u2015\u2212\ufe63\uff0d][^\[\]\n]{1,30})\](?!\])")
 SECTION_MENTION = re.compile(
     r"\b(?:sections?|secs?\.|s\.|articles?|art\.|rules?)\s*([0-9]+[A-Z]?(?:\([0-9a-z]+\))*)"
     r"|\border\s+([IVXL]{2,})\b"
@@ -73,6 +75,21 @@ class GuardReport:
             "outdated": self.outdated,
             "violations": self.violations,
         }
+
+
+def _clean_id(raw: str) -> str:
+    return re.sub(r"\s+", "", raw.translate(DASHES)).upper()
+
+
+def normalize_tags(text: str) -> str:
+    known = provisions_by_id()
+    out = TAG.sub(lambda m: f"[[{_clean_id(m.group(1))}]]", text)
+
+    def single(match):
+        pid = _clean_id(match.group(1))
+        return f"[[{pid}]]" if pid in known else match.group(0)
+
+    return SINGLE_TAG.sub(single, out)
 
 
 def _prefix(pid: str) -> str:

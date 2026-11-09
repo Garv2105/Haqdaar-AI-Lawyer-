@@ -68,6 +68,8 @@ Truthfulness rules (most important):
 4. Never invent facts about the person's case. If a fact is unknown, ask, or in documents write a placeholder like [FILL: landlord's full name].
 5. Items marked PRACTICAL GUIDANCE are common practice, not law. Present them as tips, not as legal rules.
 6. If the person's state matters (for example, rent law) and you do not know the state, say so.
+7. Never state a fee, cost, interest rate, compensation amount or time period unless it is in SOURCES. If the person needs it, say it varies and where to check.
+8. If you already explained something earlier in this conversation, do not repeat it. Refer back in one line and add only what is new.
 
 Case topic: {topic}
 Case file so far: {case_file}
@@ -102,6 +104,8 @@ Keep it under 320 words.""",
 === DRAFT START ===
 (document here)
 === DRAFT END ===
+- Write the document as plain text: no markdown, no asterisks, no # headings.
+- For the legal basis, prefer laws that apply everywhere in India. Do not rely on a law whose caveat says it applies only in some states unless the person's state is known to follow it; if unsure, mention it only as "if applicable in your state".
 - Inside the document: date, from, to, subject, numbered facts using only facts the person gave, the legal basis using SOURCES ids like [[COW2019-S17]], a clear demand with an amount and a deadline (15 days unless the person said otherwise), and what the sender will do if the demand is not met (only remedies found in SOURCES). Use [FILL: ...] for every unknown detail. Never invent names, addresses, dates or amounts.
 - After the draft, add one line: "Have a lawyer check this before sending if the amount is large or the other side has a lawyer.\"""",
     "practise": """TASK: Practice mode. Play the OTHER side (the landlord, employer, company agent, etc.) so the person can rehearse.

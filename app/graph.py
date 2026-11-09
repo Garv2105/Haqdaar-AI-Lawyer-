@@ -1,4 +1,5 @@
 import json
+import re
 import time
 from typing import Any, TypedDict
 
@@ -215,7 +216,7 @@ def build_graph(llm, settings):
         holder = {"usage": list(state.get("usage", []))}
         c = llm.complete(system, state["user_message"], history=state.get("history", []), role="main")
         _log(holder, f"respond:{mode}", c)
-        out = {"raw_answer": c.text, "generator": "respond", "usage": holder["usage"], "trace": list(state.get("trace", []))}
+        out = {"raw_answer": guard.normalize_tags(c.text), "generator": "respond", "usage": holder["usage"], "trace": list(state.get("trace", []))}
         _timed(out, f"respond:{mode}", t)
         return out
 
@@ -229,7 +230,7 @@ def build_graph(llm, settings):
         c = llm.complete(system, state["user_message"], history=state.get("history", []), role="main")
         _log(holder, "out_of_scope", c)
         out = {
-            "raw_answer": c.text,
+            "raw_answer": guard.normalize_tags(c.text),
             "generator": "out_of_scope",
             "sources": [],
             "mode": "out_of_scope",
@@ -268,7 +269,8 @@ def build_graph(llm, settings):
                 if c["id"] not in known:
                     c["n"] = len(citations) + 1
                     citations.append(c)
-            draft = guard.render_inline(draft, ids)
+            draft = guard.render_inline(draft, ids).replace("**", "")
+            draft = re.sub(r"^#+\s*", "", draft, flags=re.MULTILINE)
         shown = guard.check(cleaned, ids).as_dict()
         shown["stripped_after_retry"] = report.violations
         out = {
